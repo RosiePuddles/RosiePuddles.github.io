@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fck Documentation - Built-in types</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="../scribbler-global.css">
+    <link rel="stylesheet" href="scribbler-doc.css">
+    <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="doc_home.html">Main docs page</a>
+      <a href="built-in_types.html">Built-in types</a>
+      <a style="color: #989898;">Built-in methods</a>
+    </div>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <h1 class="logo">fck <span class="logo__thin">Docs</span></h1>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="../index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+        <li class="menu__item"><a href="https://github.com/RosiePuddles/fck" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu__item"><a class="link link--dark"><span style="cursor:pointer" onclick="openNav()">&#9776;</span></a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc__nav">
+        <ul>
+          <li class="js-btn selected">int type</li>
+        </ul>
+      </aside>
+      <article class="doc__content">
+        <h1>Built-in types</h1>
+        <p>This page details the different built-in types within the fck language.</p>
+        <section class="js-section">
+          <h3 class="section__title">int type</h3>
+          <p>The int type contains an integer value. Upon initialisation, a value can optionally be assigned. If the value given to be assigned is not an integer, the value is converted into an integer in the following way:</p>
+          <ul>
+            <li><p><b>float:</b> If the value is a float, it will be rounded to an integer</p></li>
+            <li><p><b>sfloat:</b> If the value is an sfloat, the value of the sfloat will be rounded to an integer</p></li>
+            <li><p><b>bool:</b> If the value is a boolean that is true, this will be converted into a 1. A boolean with a value of false will be converted into a 0</p></li>
+          </ul>
+          <p>If the value is not covered by the above rules, then an error is raised.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                int &lt;variable_identifier&gt;
+                int &lt;variable_identifier&gt; :: &lt;value&gt;
+              </code>
+            </pre>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <footer class="footer">Welcome to the mess that is fck</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../scribbler.js"></script>
+  </body>
+</html>

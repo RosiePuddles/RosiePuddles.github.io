@@ -149,3 +149,13 @@ window.addEventListener('load', function(){
   }
   icon.addEventListener('click', showNav);
 });
+
+// Sidebar Doc Nav
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "22vh";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
