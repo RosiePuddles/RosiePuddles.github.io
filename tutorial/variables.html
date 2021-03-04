@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fck Tutorials - Variables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="../css/scribbler-global.css">
+    <link rel="stylesheet" href="../css/scribbler-doc.css">
+    <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <h1 class="logo"><a href="tutorial_landing.html">fck <span class="logo__thin">Tutorials</a></span></h1>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="../index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+        <li class="menu__item"><a href="https://github.com/RosiePuddles/fck" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc__nav">
+        <ul>
+          <li><a href="hello_world.html">Hello world!</a></li>
+          <li><a href="simple_maths.html">Simple maths</a></li>
+          <li class="selected">Variables</li>
+        </ul>
+      </aside>
+      <article class="doc__content">
+        <h1>Variables</h1>
+        <p>fck has several variable types, <code>int</code>, <code>float</code>, <code>sfloat</code>, <code>bool</code>, <code>string</code>, <code>list</code>, <code>array</code>, and <code>dict</code>. But to start with, we'll only look at <code>int</code>, <code>float</code>, and <code>string</code> types.<br/>To assign a variable, you need to specify the type of the variable, then the name or identifier for that variable, then a set operator followed by a value or expression to assign to the value. To show this, we'll just give you some examples.<br/>To start with, <code>int</code> types store an integer, and only an integer. If you try to set an <code>int</code> type to a non-integer, then it will be rounded to an integer:</p>
+        <div class="code__block">
+          <pre class="code code--block">
+            <code>
+              >>> int example_variable :: 3
+              >>> log(example_variable)
+              3
+              >>> int example_variable :: -5.2
+              >>> log(example_variable)
+              -5
+              >>>
+            </code>
+          </pre>
+        </div>
+        <p>Next are <code>float</code> types. Floats, short for floating point, store non-integer values like 17.8. they can also store integer values, but they'll be considered to be a float:</p>
+        <div class="code__block">
+          <pre class="code code--block">
+            <code>
+              >>> float example_variable :: -8.3
+              >>> log(example_variable)
+              -8.3
+              >>> float example_variable :: 12
+              >>> log(example_variable)
+              12.0
+              >>>
+            </code>
+          </pre>
+        </div>
+        <p>Finally, <code>string</code> types store strings. Strings are just pieces of text surrounded by a pair of either inverted commas('), or quotation marks("):</p>
+        <div class="code__block">
+          <pre class="code code--block">
+            <code>
+              >>> string example_variable :: "Hello world!"
+              >>> print(example_variable)
+              Hello world!
+              >>>
+            </code>
+          </pre>
+        </div>
+        <p>Okay, maybe that wasn't the last bit of this tutorial. Throughout this tutorial, whenever we've been printinting variables, we've always assigned them first, and then printed them, but there is another better way to achieve this, a different assignment operator, <code>:&gt;</code>! This operator is exactly the same as the other assignment operator, but after it's assigned a value to the variable, it returns the value, which means that we can condense our code to the following:</p>
+        <div class="code__block">
+          <pre class="code code--block">
+            <code>
+              >>> log(float example_variable :&gt; -19.83)
+              -19.83
+              >>>
+            </code>
+          </pre>
+        </div>
+      </article>
+    </div>
+
+    <footer class="footer">Welcome to the mess that is fck</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../scribbler.js"></script>
+  </body>
+</html>

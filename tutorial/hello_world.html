@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>fck Tutorials - Home</title>
+    <title>fck Tutorials - Hello World</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="../css/scribbler-global.css">
@@ -24,23 +24,22 @@
     <div class="wrapper">
       <aside class="doc__nav">
         <ul>
-          <li class="js-btn selected">Get Started</li>
-          <li class="js-btn">Intermediate</li>
-          <li class="js-btn">Advanced</li>
+          <li class="selected">Hello world!</li>
+          <li><a href="simple_maths.html">Simple maths</a></li>
+          <li><a href="variables.html">Variables</a></li>
         </ul>
       </aside>
       <article class="doc__content">
-        <h1>fck Tutorials</h1>
-        <p>Welcome to the tutorials page! This page can either guide you through learning fck from the ground up as your first language or just another one to add to your arsenal, this is where you can learn.</p>
-        <section class="js-section">
-          <h3 class="section__title">Get Started</h3>
-          <p>These tutorials are for the less advanced and beginners, or just to refresh your memory on how something works.</p>
-          <ul>
-            <li><a href="hello_world.html">Hello world!</a></li>
-            <li><a href="simple_maths.html">Simple maths</a></li>
-            <li><a href="variables.html">Variables</a></li>
-          </ul>
-        </section>
+        <h1>Hello World!</h1>
+        <p>fck has two built-in methods for printing items to the screen, <code>print</code> and <code>log</code>. These are fairly similar but are intended for different uses. <code>print</code> is a nicer way of printing items and can be "pretified" with colours (once I impliment it). <code>log</code> on the other hand is intended to be used more for debugging and printing things that don't really need to be "prettified". So, how do we use them? They're really simple to use. Below is a piece of code written in fck that prints "Hello world!" to the screen using the <code>print</code> method and the <code>log</code> method:</p>
+        <div class="code__block">
+          <pre class="code code--block">
+            <code>
+              print("Hello world!")
+              log("Hello world!")
+            </code>
+          </pre>
+        </div>
       </article>
     </div>
 

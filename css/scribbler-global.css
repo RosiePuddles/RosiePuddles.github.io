@@ -1,7 +1,8 @@
 /* css variables*/
 :root {
   --primary-color: #432E30;
-  --primary-color-light: #8E7474;
+  --primary-color-light: #af9d9d;
+  --primary-color-light2: #8E7474;
   --accent-color: #FE6A6B;
   --accent-color-light: #FFE4E4;
   --accent-color-dark: #B94B4C;
@@ -29,11 +30,6 @@ p {
 a, a:hover {
   text-decoration: none;
   color: var(--primary-color);
-}
-
-.inline_href {
-  color: var(--accent-color);
-  transition: all .3s ease-out;
 }
 
 hr {
@@ -99,7 +95,7 @@ hr {
   font-family: Space Mono, SFMono-Regular, Menlo,Monaco, Consolas, Liberation Mono, Courier New, monospace;
   background: var(--bg-color);
   border: 1px solid var(--code-bg-color);
-  color: var(--primary-color-light);
+  color: var(--primary-color-light2);
 }
 
 .code--block {
@@ -119,7 +115,7 @@ hr {
   color: white;
   position: relative;
   text-decoration: none;
-  border: 0;
+  border: 10px, 10px;
   transition: all .3s ease-out;
 }
 
@@ -158,6 +154,7 @@ hr {
 /* links */
 .link {
   text-decoration: none;
+  color: var(--primary-color-light);
   transition: all 0.3s ease-out;
 }
 

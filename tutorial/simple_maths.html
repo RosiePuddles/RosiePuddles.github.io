@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fck Tutorials - Simple maths</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="../css/scribbler-global.css">
+    <link rel="stylesheet" href="../css/scribbler-doc.css">
+    <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <h1 class="logo"><a href="tutorial_landing.html">fck <span class="logo__thin">Tutorials</a></span></h1>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="../index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+        <li class="menu__item"><a href="https://github.com/RosiePuddles/fck" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc__nav">
+        <ul>
+          <li><a href="hello_world.html">Hello world!</a></li>
+          <li class="selected">Simple maths</li>
+          <li><a href="variables.html">Variables</a></li>
+        </ul>
+      </aside>
+      <article class="doc__content">
+        <h1>Simple maths</h1>
+        <p>fck has a lot of operators applicable to many different areas. The full documentation for all the operators can be found on the <a href="../docs_pages/operators.html" class="link">operators</a> documentation page. But for simplicity, we'll just be looking at some simple ones here.<br/>First off, adding or subtracting values is just how you'd expect it, a <code>+</code> and <code>-</code> can add or subtract two values, just like that. Below is a shell that shows how easy adding and subtracting numbers is:</p>
+        <div class="code__block">
+          <pre class="code code--block">
+            <code>
+              >>> 1 + 2
+              3
+              >>> 0.05 + 1.03
+              1.08
+              >>> 12 - 4
+              8
+              >>> -3 + 3
+              0
+              >>>
+            </code>
+          </pre>
+        </div>
+        <p>The <code>+</code> and <code>-</code> operators can also be used to indicate whether or not a value is positive or nagetive. Just don't put two positive or negative signs next to each other. That means something entirely different:</p>
+        <div class="code__block">
+          <pre class="code code--block">
+            <code>
+              >>> +1
+              1
+              >>> -1
+              -1
+              >>>
+            </code>
+          </pre>
+        </div>
+        <p>fck also has multiplication and division, big surprise I know, and using them is just as easy as using addition and subtraction:</p>
+        <div class="code__block">
+          <pre class="code code--block">
+            <code>
+              >>> -5 * 3
+              -15
+              >>> 12 / 4
+              3
+              >>> 12 / 0
+              *******************************************************
+              Warning:
+              Divide by zero: Divide by zero found. Returned infinity
+              Traceback (most recent call):
+                File &lt;shell&gt;, line 1, in &lt;program&gt;
+              *******************************************************
+              &lt;Infinity&gt;
+              >>>
+            </code>
+          </pre>
+        </div>
+        <p>As you can see, you can sort of divide by zero, but also not really. In fck, dividing by zero doesn't stop the code from running, but just returns infinity, which isn't really useful, but at least it doesn't stop everything. This is one of the great features of fck; if it can keep going, it will try it's best to keep going. If you do divide by zero, the result can then be multiplied by zero and you end up back where you started.</p>
+      </article>
+    </div>
+
+    <footer class="footer">Welcome to the mess that is fck</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../scribbler.js"></script>
+  </body>
+</html>
