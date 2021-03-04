@@ -1,0 +1,419 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fck Documentation - Operators</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="../scribbler-global.css">
+    <link rel="stylesheet" href="scribbler-doc.css">
+    <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="doc_home.html">Main docs page</a>
+      <a href="error_messages.html">Error messages</a>
+      <a href="built-in_types.html">Built-in types</a>
+      <a href="built-in_funcs.html">Built-in methods</a>
+      <a style="color: #989898;">Operators</a>
+    </div>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <h1 class="logo"><a href="doc_home.html">fck <span class="logo__thin">Docs</a></span></h1>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="../index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+        <li class="menu__item"><a href="https://github.com/RosiePuddles/fck" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu__item"><a class="link link--dark"><span style="cursor:pointer" onclick="openNav()">&#9776;</span></a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc__nav">
+        <ul>
+          <li style="color:var(--primary-color-light)">General operators</li>
+          <li class="js-btn selected"> Add, multiply</li>
+          <li class="js-btn"> Subtract</li>
+          <li class="js-btn"> Divide, floored divide,<br/> modulo</li>
+          <li class="js-btn"> Power</li>
+          <li style="color:var(--primary-color-light)">Assignment operators</li>
+          <li class="js-btn"> Non-returned assignment</li>
+          <li class="js-btn"> Returned assignment</li>
+        </ul>
+      </aside>
+      <article class="doc__content">
+        <h1>Operators</h1>
+        <p>This page details the different operators available in fck, their use, and return types depending on the given types. The return types will be given in tables, where the leftmost column is the type of the first value or expression given, and the top row is the type of the second value or expression given. This page is grouped into 2 sections; general operators, and operators regarding variable assignment.</p>
+        <h2>General operators</h2>
+        <section class="js-section">
+          <h3 class="section__title">Add, multiply</h3>
+          <p>Adds or multiplies two values together.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                # Add
+                &lt;value_or_expression&gt; + &lt;value_or_expression&gt;
+                # Multiply
+                &lt;value_or_expression&gt; * &lt;value_or_expression&gt;
+              </code>
+            </pre>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th></td>
+                <th>int</th>
+                <th>float</th>
+                <th>sfloat</th>
+                <th>bool</th>
+                <th>list</th>
+                <th>string</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>int</td>
+                <td>int</td>
+                <td>float</td>
+                <td>float</td>
+                <td>int</td>
+                <td>list</td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>list</td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>list</td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>bool</td>
+                <td>int</td>
+                <td>float</td>
+                <td>float</td>
+                <td>int</td>
+                <td>list</td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>string</td>
+                <td>string</td>
+                <td>string</td>
+                <td>string</td>
+                <td>string</td>
+                <td>string</td>
+                <td>string</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Subtract</h3>
+          <p>Subtracts two values from one another.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                &lt;value_or_expression&gt; - &lt;value_or_expression&gt;
+              </code>
+            </pre>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th></td>
+                <th>int</th>
+                <th>float</th>
+                <th>sfloat</th>
+                <th>bool</th>
+                <th>list</th>
+                <th>string</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>int</td>
+                <td>int</td>
+                <td>float</td>
+                <td>float</td>
+                <td>int</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>bool</td>
+                <td>int</td>
+                <td>float</td>
+                <td>float</td>
+                <td>int</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>string</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Divide, floored divide, division remainder(modulo)</h3>
+          <p>Divides, divides and floors, or returns the remainder of a division of two values. If the second value given for any of these operations if 0, a divide by zero or modulo by zero warning is raised for division and floored division, and modulo operators respectively. A division or floored division by zero results in infinity and the first value or expression being stored along with the result of the infinity. If this value of infinity is later multiplied by zero, the stored expression is returned. A modulo by zero results in 0.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                # Divide
+                &lt;value_or_expression&gt; / &lt;value_or_expression&gt;
+                # Floor divide
+                &lt;value_or_expression&gt; // &lt;value_or_expression&gt;
+                # Modulo
+                &lt;value_or_expression&gt; % &lt;value_or_expression&gt;
+              </code>
+            </pre>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th></td>
+                <th>int</th>
+                <th>float</th>
+                <th>sfloat</th>
+                <th>bool</th>
+                <th>list</th>
+                <th>string</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>int</td>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>int</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>bool</td>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>int</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>string</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Power</h3>
+          <p>Returns one value to the power of another. fck defines 0 to the power of 0 to be 1.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                &lt;value_or_expression&gt; ** &lt;value_or_expression&gt;
+              </code>
+            </pre>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th></td>
+                <th>int</th>
+                <th>float</th>
+                <th>sfloat</th>
+                <th>bool</th>
+                <th>list</th>
+                <th>string</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>int</td>
+                <td>int</td>
+                <td>float</td>
+                <td>float</td>
+                <td>int</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>sfloat</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>bool</td>
+                <td>float</td>
+                <td>float</td>
+                <td>float</td>
+                <td>int</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>list</td>
+                <td>Warning</td>
+              </tr>
+              <tr>
+                <td>string</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+                <td>Warning</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <h2>Assignment operators</h2>
+        <section class="js-section">
+          <h3 class="section__title">Divide, floored divide, division remainder(modulo)</h3>
+          <p>Divides, divides and floors, or returns the remainder of a division of two values. If the second value given for any of these operations if 0, a divide by zero or modulo by zero warning is raised for division and floored division, and modulo operators respectively. A division or floored division by zero results in infinity and the first value or expression being stored along with the result of the infinity. If this value of infinity is later multiplied by zero, the stored expression is returned. A modulo by zero results in 0.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                # Divide
+                &lt;value_or_expression&gt; / &lt;value_or_expression&gt;
+                # Floor divide
+                &lt;value_or_expression&gt; // &lt;value_or_expression&gt;
+                # Modulo
+                &lt;value_or_expression&gt; % &lt;value_or_expression&gt;
+              </code>
+            </pre>
+          </div>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Divide, floored divide, division remainder(modulo)</h3>
+          <p>Divides, divides and floors, or returns the remainder of a division of two values. If the second value given for any of these operations if 0, a divide or modulo by zero error is returned.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                # Divide
+                &lt;value_or_expression&gt; / &lt;value_or_expression&gt;
+                # Floor divide
+                &lt;value_or_expression&gt; // &lt;value_or_expression&gt;
+                # Modulo
+                &lt;value_or_expression&gt; % &lt;value_or_expression&gt;
+              </code>
+            </pre>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <footer class="footer">Welcome to the mess that is fck</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../scribbler.js"></script>
+  </body>
+</html>

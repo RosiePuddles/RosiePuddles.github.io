@@ -240,7 +240,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   transition: color .3s ease-out;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 table td, table th {
