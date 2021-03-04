@@ -31,6 +31,11 @@ a, a:hover {
   color: var(--primary-color);
 }
 
+.inline_href {
+  color: var(--accent-color);
+  transition: all .3s ease-out;
+}
+
 hr {
   padding: 1rem 0;
   border: 0;
