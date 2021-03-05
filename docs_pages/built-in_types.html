@@ -118,6 +118,53 @@
               </code>
             </pre>
           </div>
+          <p>To access a member of a list, the square brackets are used. The values inside of the square brackets can be either single values or expressions that evaluate to a single value. The the given value is not a single value, an error is raised. To access a range of values in the list, a colon(:) is used. The expression before the colon is the index of the first item in the range, and the expression after the colon is the index of the last item in the range. Both of these values are optional, and if not given are assumed to be zero, for the first index, and the largest allowed index, for the last index.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                >>> list example_list :: [8, 3, 2, -12.6, 8, 0.46, 4]
+                >>> # Single index access
+                >>> log(example_list[0])
+                8
+                >>> # Range access
+                >>> log(example_list[3:5])
+                [-12.6, 8, 0.46]
+              </code>
+            </pre>
+          </div>
+          <p>If either of the given indexes exceed the length of the list, a warning is raised and the index is set to the largest allowed index.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                >>> list example_list :: [8, 3, 2, -12.6, 8, 0.46, 4]
+                >>> log(example_list[100])
+                **********************************************************************
+                Warning:
+                Index for list was out of range. Changed value to fit list range: List
+                index value was too large for this list
+                Traceback (most recent call):
+                  File &lt;shell>, line 1, in &lt;program>
+                log(example_list[100])
+                    ^^^^^^^^^^^^^^^^^
+                **********************************************************************
+                4
+                >>>
+              </code>
+            </pre>
+          </div>
+          <p>If the first index given is larger than the last index given, the returned list being reversed, since it goes from the given first index to the given last index. This is an equivalent operation to assigning the list range to a list variable and then reversing the new list.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                >>> log(example_list[-1:2])
+                [0.46, 8, -12.6, 2]
+                >>> log(example_list[2:-1].reverse())
+                [0.46, 8, -12.6, 2]
+                >>>
+              </code>
+            </pre>
+          </div>
+
         </section>
       </article>
     </div>
