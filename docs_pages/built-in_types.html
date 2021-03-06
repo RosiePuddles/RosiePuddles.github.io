@@ -152,6 +152,26 @@
               </code>
             </pre>
           </div>
+          <p>When accessing a single item or range of items in a list, the indexes must be integers. If they are not integers, then a warning is taised, and the value is rounded to an integer.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                >>> list example_list :: [8, 3, 2, -12.6, 8, 0.46, 4]
+                >>> log(example_list[2.9])
+                *****************************************************************
+                Warning:
+                Given index for list was a float. Rounded value: List index was a
+                float
+                Traceback (most recent call):
+                  File &lt;shell>, line 1, in &lt;program>
+                log(example_list[2.9])
+                                 ^^^^^
+                *****************************************************************
+                2
+                >>>
+              </code>
+            </pre>
+          </div>
           <p>If the first index given is larger than the last index given, the returned list being reversed, since it goes from the given first index to the given last index. This is an equivalent operation to assigning the list range to a list variable and then reversing the new list.</p>
           <div class="code__block code__block--notabs">
             <pre class="code code--block">
