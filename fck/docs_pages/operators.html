@@ -38,6 +38,7 @@
           <li class="js-btn"> Subtract</li>
           <li class="js-btn"> Divide, floored divide,<br/> modulo</li>
           <li class="js-btn"> Power</li>
+          <li class="js-btn"> True false</li>
           <li style="color:var(--primary-color-light)">Assignment operators</li>
           <li class="js-btn"> Non-returned assignment</li>
           <li class="js-btn"> Returned assignment</li>
@@ -375,19 +376,25 @@
             </tbody>
           </table>
         </section>
-        <h2>Assignment operators</h2>
         <section class="js-section">
-          <h3 class="section__title">Divide, floored divide, division remainder(modulo)</h3>
-          <p>Divides, divides and floors, or returns the remainder of a division of two values. If the second value given for any of these operations if 0, a divide by zero or modulo by zero warning is raised for division and floored division, and modulo operators respectively. A division or floored division by zero results in infinity and the first value or expression being stored along with the result of the infinity. If this value of infinity is later multiplied by zero, the stored expression is returned. A modulo by zero results in 0.</p>
+          <h3 class="section__title">True false</h3>
+          <p>Returns one value to the power of another. fck defines 0 to the power of 0 to be 1.</p>
           <div class="code__block code__block--notabs">
             <pre class="code code--block">
               <code>
-                # Divide
-                &lt;value_or_expression&gt; / &lt;value_or_expression&gt;
-                # Floor divide
-                &lt;value_or_expression&gt; // &lt;value_or_expression&gt;
-                # Modulo
-                &lt;value_or_expression&gt; % &lt;value_or_expression&gt;
+                &lt;value_or_expression&gt; ** &lt;value_or_expression&gt;
+              </code>
+            </pre>
+          </div>
+        </section>
+        <!-- <h2>Assignment operators</h2> -->
+        <section class="js-section">
+          <h3 class="section__title">Non-returned Assignment</h3>
+          <p>Returns one value to the power of another. fck defines 0 to the power of 0 to be 1.</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                &lt;value_or_expression&gt; ** &lt;value_or_expression&gt;
               </code>
             </pre>
           </div>
