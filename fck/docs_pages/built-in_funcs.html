@@ -12,56 +12,78 @@
     <link rel="author" href="humans.txt">
   </head>
   <body>
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="doc_home.html">Main docs page</a>
-      <a href="error_messages.html">Error messages</a>
-      <a href="built-in_types.html">Built-in types</a>
-      <a style="color: #989898;">Built-in methods</a>
-      <a href="operators.html">Operators</a>
-    </div>
     <div class="doc__bg"></div>
     <nav class="header">
-      <h1 class="logo"><a href="doc_home.html">fck <span class="logo__thin">Docs</a></span></h1>
+      <h1 class="logo"><a href="index.html">fck <span class="logo__thin">Docs</a></span></h1>
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
         <li class="menu__item"><a href="../index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
         <li class="menu__item"><a href="https://github.com/RosiePuddles/fck" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
-        <li class="menu__item"><a class="link link--dark"><span style="cursor:pointer" onclick="openNav()">&#9776;</span></a></li>
       </ul>
     </nav>
     <div class="wrapper">
       <aside class="doc__nav">
         <ul>
-          <li class="js-btn selected">print</li>
-          <li class="js-btn">log</li>
-          <li class="js-btn">type</li>
-          <li class="js-btn">input</li>
-          <li class="js-btn">clear</li>
-          <li class="js-btn">run</li>
+          <li><a class="js-btn selected" href="index.html">Docs home</a></li>
+          <li><a class="js-btn" href="built-in_types.html">Built-in types</a></li>
+          <li><a class="js-btn" href="builtt-in_funcs.html">Built-in methods</a></li>
+          <li><a class="js-btn" href="operators.html">Operators</a></li>
+          <li><a class="js-btn" href="error_messages.html">Error messages</a></li>
         </ul>
       </aside>
       <article class="doc__content">
         <h1>Built-in methods</h1>
         <p>This page details the different built-in methods within the fck language.</p>
-        <section class="js-section">
-          <h3 class="section__title">int type</h3>
-          <p>The int type contains an integer value. Upon initialisation, a value can optionally be assigned. If the value given to be assigned is not an integer, the value is converted into an integer in the following way:</p>
-          <ul>
-            <li><p><b>float:</b> If the value is a float, it will be rounded to an integer</p></li>
-            <li><p><b>sfloat:</b> If the value is an sfloat, the value of the sfloat will be rounded to an integer</p></li>
-            <li><p><b>bool:</b> If the value is a boolean that is true, this will be converted into a 1. A boolean with a value of false will be converted into a 0</p></li>
-          </ul>
-          <p>If the value is not covered by the above rules, then an error is raised.</p>
-          <div class="code__block code__block--notabs">
-            <pre class="code code--block">
-              <code>
-                int &lt;variable_identifier&gt;
-                int &lt;variable_identifier&gt; :: &lt;value&gt;
-              </code>
-            </pre>
-          </div>
-        </section>
+        <h2>Naming methods</h2>
+        <p>fck supports naming loops, specifically the while and iterate loops. To name a loop, do a thing that I won't tell you and it'll be all good hun xx</p>
+        <!-- While loop -->
+        <h2 class="section__title">While loop</h2>
+        <p>The while loop runs the suite inside it so long as a given dcondition is true.</p>
+        <div class="code__block">
+          <pre class="code code--block">
+            <code>
+              while &lt;condition&gt; {
+                &lt;suite&gt;
+              }
+            </code>
+          </pre>
+        </div>
+
+        <!-- Iterate loop -->
+        <h2 class="section__title">Iterate loop</h2>
+        <p>The iterate loop iterates over a given range or list, and for each iteration runs a given suite. The current iteration is not assigned to a temporary variable by default, but can be assigned to a temporary variable is required. For both lists and ranges a step value can be given, which can be a float or int.</p>
+        <div class="code__block">
+          <pre class="code code--block">
+            <code>
+              iterate &lt;range&gt; {
+                &lt;suite&gt;
+              }
+            </code>
+          </pre>
+        </div>
+        <h3>Ranges</h3>
+        <p>To demonstate the different ways that the range argument of the iterate method can be used, the following example have been given, where for each pair of lines, the first line indicates the range given, and the second line indicates the numbers that would be iterated over:</p>
+        <div class="code__block">
+          <pre class="code code--block">
+            <code>
+              10
+              -> 0 1 2 3 4 5 6 7 8 9
+              3 to 10
+              -> 3 4 5 6 7 8 9
+              10 to 3
+              -> 10 9 8 7 6 5 4
+              10 step 2
+              -> 0 2 4 6 8
+              3 to 10 step 2
+              -> 3 5 7 9
+              10 to 3 step 3 (Raises warning)
+              -> 10 7 4
+              10 to 3 step -3
+              -> 10 7 4
+            </code>
+          </pre>
+        </div>
+        <p>In the sixth example given, a warning is raised. Since the first value is higher than the second value, the step value must be nagative, but the given step value is positive. This changes the step value to the negative of the given step value, so negative 3 in this example.</p>
       </article>
     </div>
 

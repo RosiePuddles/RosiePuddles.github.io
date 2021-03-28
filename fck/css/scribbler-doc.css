@@ -145,6 +145,10 @@ html, body {
     display: inline-block;
     padding-right: 1rem;
   }
+  .doc__nav .selected {
+    color: var(--accent-color);
+    position: relative;
+  }
   .doc__nav .selected:after {
     display: none;
   }
