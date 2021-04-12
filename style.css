@@ -1,3 +1,43 @@
+@font-face {
+    font-family: "blexMono";
+    src: url("./fonts/BlexMono.ttf");
+}
+
+* {
+  font-family: "blexMono";
+  text-align: center;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+  font-size: 120%;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: inherit;
+}
+
 body {
   background-color: inherit;
+}
+
+.centering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
