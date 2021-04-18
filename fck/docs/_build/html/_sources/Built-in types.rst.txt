@@ -1,0 +1,153 @@
+Built-in types
+==============
+
+This page details the different built in types within fck. For the different types of operators used by fck, please see the :doc:`operators </Operators>` page
+
+.. _int type:
+
+``int`` type
+------------
+::
+
+    int <identifier> ((::|:>) <value>)?
+
+The ``int`` variable type inherits from the ``Number`` class, and holds a single integer value. It has a default value of 0. When a value is assigned to an ``int`` type variable or cast as an ``int`` using the ``at`` keyword, the value sometimes has to be preprocessed to form an integer if it is not already. The table below details the different preprocessing that occurs for different value types:
+
++---------------+------------------------------------------------------------+--------------------------+
+| Value type    | Preprocessing                                              | Warning or error raised  |
++---------------+------------------------------------------------------------+--------------------------+
+| ``int``       | None                                                       | None                     |
++---------------+------------------------------------------------------------+--------------------------+
+| ``float``     | Value is rounded                                           | None                     |
++---------------+------------------------------------------------------------+--------------------------+
+| ``list``      || **For a list with a single element in recursively:**      | :ref:`W014<warnings>`    |
+|               || The single element is removed and processed depending on  |                          |
+|               | its type                                                   |                          |
+|               +------------------------------------------------------------+--------------------------+
+|               || **For all other lists:**                                  | :ref:`E000<errors>`      |
+|               || An error is raised                                        |                          |
++---------------+------------------------------------------------------------+--------------------------+
+| ``str``       | fck will attempt to convert the string into a base 10      || Warning:                |
+|               | integer, or float and round the value. If it is not        | :ref:`W016<warnings>`    |
+|               | successful, an error is raised. If it is successful, a     || Error:                  |
+|               | warning is raised.                                         | :ref:`E000<errors>`      |
++---------------+------------------------------------------------------------+--------------------------+
+
+``float`` type
+--------------
+::
+
+    float <identifier> ((::|:>) <value>)?
+
+The ``float`` variable type inherits from the ``Number`` class, and holds a single floating point value. It has a default value of 0.0. When a value is assigned to a ``float`` type variable or cast as a ``float`` using the ``at`` keyword, the value sometimes has to be preprocessed to form a floating point value if it is not already. The table below details the different preprocessing that occurs for different value types:
+
++---------------+------------------------------------------------------------+--------------------------+
+| Value type    | Preprocessing                                              | Warning or error raised  |
++---------------+------------------------------------------------------------+--------------------------+
+| ``int``       | Converts integer value to floating point value             | None                     |
++---------------+------------------------------------------------------------+--------------------------+
+| ``float``     | None                                                       | None                     |
++---------------+------------------------------------------------------------+--------------------------+
+| ``list``      || **For a list with a single element in recursively:**      | :ref:`W014<warnings>`    |
+|               || The single element is removed and processed depending on  |                          |
+|               | its type                                                   |                          |
+|               +------------------------------------------------------------+--------------------------+
+|               || **For all other lists:**                                  | :ref:`E000<errors>`      |
+|               || An error is raised                                        |                          |
++---------------+------------------------------------------------------------+--------------------------+
+| ``str``       | fck will attempt to convert the string into a base 10      || Warning:                |
+|               | float. If it is not                                        | :ref:`W016<warnings>`    |
+|               | successful, an error is raised. If it is successful, a     || Error:                  |
+|               | warning is raised                                          | :ref:`E000<errors>`      |
++---------------+------------------------------------------------------------+--------------------------+
+
+``str`` type
+------------
+::
+
+    str <identifier> ((::|:>) <value>)?
+
+The ``str`` type inherits from the ``Value`` class and contains a single string, which can be empty. The default value is an empty string(``''``). To create a string, the value has to be surrounded by a pair of either inverted commas(``'``) or quotation marks(``"``).
+
+Escape characters
+^^^^^^^^^^^^^^^^^
+
+In fck, the forward slash ``\`` is used. The character after a ``\`` can ba anything and is added to the string regardless; however there are a few characters after a forward slash that have special meanings. These are listed below:
+
++--------------+---------------------------------+
+| Character    | Description                     |
++--------------+---------------------------------+
+| ``\n``       | New line                        |
++--------------+---------------------------------+
+| ``\t``       | Tab                             |
++--------------+---------------------------------+
+
+
+
+.. _list documentation:
+
+``list`` type
+-------------
+::
+
+    list <identifier> ((::|:>) <value>)?
+
+The ``list`` type inherits from the ``Value`` class and contains a list of elements, which can be empty. The default value is an empty list(``[]``). When a value is assigned to a ``list`` type variable or cast as a ``list`` using the ``as`` keyword, some preprocessing may be required depending on the type of value being assigned. This preprocessing is outlined in the table below:
+
++---------------+------------------------------------------------------------+--------------------------+
+| Value type    | Preprocessing                                              | Warning or error raised  |
++---------------+------------------------------------------------------------+--------------------------+
+| ``int``,      | Value is put into a list, and a warning is raised          | :ref:`W008<warnings>`    |
+| ``float``, or |                                                            |                          |
+| ``str``       |                                                            |                          |
++---------------+------------------------------------------------------------+--------------------------+
+| ``list``      | None                                                       | None                     |
++---------------+------------------------------------------------------------+--------------------------+
+
+A ``list`` type can be multi-dimensional.
+
+Accessing element or slice of a list
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+::
+
+    <list to access>[<range>(,<range>)*]
+
+..
+
+::
+
+    <first index>..<second index> | <single index>
+
+When accessing a list, you can either access a slice or single index using a slice range or element range respectively..
+
+When accessing a slice, one of the first or second index must be specified. The first value defaults to the start of the list, and the second value defaults to the end of the list. If either of the given indices aren't ``int`` types, they are converted into ``int`` types [1]_. If this is successful, the values are then compared against the length of the list. If the indices referenced are outside the length of the list, a warning is raised(:ref:`W009<warnings>`) and the value is altered to fit within the length of the list. After this has happened, the range is retrieved from the list. If the first index is further through the list than the second value, the returned slice is reversed. So a range of ``5..1`` would return a slice containing elements 5, 4, 3, and 2 in that order. The second index is the stopping index, and is not included in a slice.
+
+When accessing a single index, a single value is given, which is then converted to an int [1]_, and clamped to the within the length of the list.
+
+To access a value or slice in a multi-dimensional list, multiple ranges can be referenced, separated with a comma. For a list reference with multiple ranges, only the last range can be a slice range, so the compound range ``1..2, 3`` is not allowed for a list [2]_, but ``1, 2..3`` is.
+
+Indices can also be negative. A negative index refers to the n:superscript:`th` last element. So the range ``..-1`` would return a slice containing the entire list except the last item. Negative indices can be used for either the first or second index in a slice range, or for an element range.
+
+.. [1] See `int type`_ reference for more details on conversion into ``int`` types.
+.. [2] This is allowed for an ``array`` of type ``list`` however. This is not allowed for lists since a list can contain several different data types, some of which a slice based range cannot be applied to.
+
+
+.. _null type:
+
+``null`` type
+-------------
+
+Built-in values
+---------------
+
+fck has a few built-in values which cannot be altered. These are given below:
+
++-------------+------------------+---------------------------------------------------------------+
+| Identifier  | Type             | Explanation                                                   |
++-------------+------------------+---------------------------------------------------------------+
+| ``true``    | ``bool``         | Returned value when a comparison is true                      |
++-------------+------------------+---------------------------------------------------------------+
+| ``false``   | ``bool``         | Returned value when a comparison is false                     |
++-------------+------------------+---------------------------------------------------------------+
+| ``null``    | ``null``         | Basic type that contains no value. :ref:`Reference<null type>`|
++-------------+------------------+---------------------------------------------------------------+

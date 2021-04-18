@@ -1,0 +1,445 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Built-in methods" href="Built-in%20methods.html" /><link rel="prev" title="Welcome to fck’s documentation!" href="index.html" />
+
+    <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
+        <title>Built-in types - fck 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
+    <link rel="stylesheet" href="_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
+    
+
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">fck 0.1.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">fck 0.1.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Built-in types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Built-in%20methods.html">Built-in methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Error%20messages.html">Error messages</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <div class="section" id="built-in-types">
+<h1>Built-in types<a class="headerlink" href="#built-in-types" title="Permalink to this headline">¶</a></h1>
+<p>This page details the different built in types within fck. For the different types of operators used by fck, please see the <a class="reference internal" href="Operators.html"><span class="doc">operators</span></a> page</p>
+<div class="section" id="int-type">
+<span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">int</span></code> type<a class="headerlink" href="#int-type" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>int &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">int</span></code> variable type inherits from the <code class="docutils literal notranslate"><span class="pre">Number</span></code> class, and holds a single integer value. It has a default value of 0. When a value is assigned to an <code class="docutils literal notranslate"><span class="pre">int</span></code> type variable or cast as an <code class="docutils literal notranslate"><span class="pre">int</span></code> using the <code class="docutils literal notranslate"><span class="pre">at</span></code> keyword, the value sometimes has to be preprocessed to form an integer if it is not already. The table below details the different preprocessing that occurs for different value types:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 59%"/>
+<col style="width: 26%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Value type</p></td>
+<td><p>Preprocessing</p></td>
+<td><p>Warning or error raised</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p>Value is rounded</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><strong>For a list with a single element in recursively:</strong></div>
+<div class="line">The single element is removed and processed depending on
+its type</div>
+</div>
+</td>
+<td><p><a class="reference internal" href="Error%20messages.html#warnings"><span class="std std-ref">W014</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><strong>For all other lists:</strong></div>
+<div class="line">An error is raised</div>
+</div>
+</td>
+<td><p><a class="reference internal" href="Error%20messages.html#errors"><span class="std std-ref">E000</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>fck will attempt to convert the string into a base 10
+integer, or float and round the value. If it is not
+successful, an error is raised. If it is successful, a
+warning is raised.</p></td>
+<td><div class="line-block">
+<div class="line">Warning:
+<a class="reference internal" href="Error%20messages.html#warnings"><span class="std std-ref">W016</span></a></div>
+<div class="line">Error:
+<a class="reference internal" href="Error%20messages.html#errors"><span class="std std-ref">E000</span></a></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="section" id="float-type">
+<h2><code class="docutils literal notranslate"><span class="pre">float</span></code> type<a class="headerlink" href="#float-type" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>float &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">float</span></code> variable type inherits from the <code class="docutils literal notranslate"><span class="pre">Number</span></code> class, and holds a single floating point value. It has a default value of 0.0. When a value is assigned to a <code class="docutils literal notranslate"><span class="pre">float</span></code> type variable or cast as a <code class="docutils literal notranslate"><span class="pre">float</span></code> using the <code class="docutils literal notranslate"><span class="pre">at</span></code> keyword, the value sometimes has to be preprocessed to form a floating point value if it is not already. The table below details the different preprocessing that occurs for different value types:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 59%"/>
+<col style="width: 26%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Value type</p></td>
+<td><p>Preprocessing</p></td>
+<td><p>Warning or error raised</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>Converts integer value to floating point value</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><strong>For a list with a single element in recursively:</strong></div>
+<div class="line">The single element is removed and processed depending on
+its type</div>
+</div>
+</td>
+<td><p><a class="reference internal" href="Error%20messages.html#warnings"><span class="std std-ref">W014</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><strong>For all other lists:</strong></div>
+<div class="line">An error is raised</div>
+</div>
+</td>
+<td><p><a class="reference internal" href="Error%20messages.html#errors"><span class="std std-ref">E000</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>fck will attempt to convert the string into a base 10
+float. If it is not
+successful, an error is raised. If it is successful, a
+warning is raised</p></td>
+<td><div class="line-block">
+<div class="line">Warning:
+<a class="reference internal" href="Error%20messages.html#warnings"><span class="std std-ref">W016</span></a></div>
+<div class="line">Error:
+<a class="reference internal" href="Error%20messages.html#errors"><span class="std std-ref">E000</span></a></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="section" id="str-type">
+<h2><code class="docutils literal notranslate"><span class="pre">str</span></code> type<a class="headerlink" href="#str-type" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>str &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">str</span></code> type inherits from the <code class="docutils literal notranslate"><span class="pre">Value</span></code> class and contains a single string, which can be empty. The default value is an empty string(<code class="docutils literal notranslate"><span class="pre">''</span></code>). To create a string, the value has to be surrounded by a pair of either inverted commas(<code class="docutils literal notranslate"><span class="pre">'</span></code>) or quotation marks(<code class="docutils literal notranslate"><span class="pre">"</span></code>).</p>
+<div class="section" id="escape-characters">
+<h3>Escape characters<a class="headerlink" href="#escape-characters" title="Permalink to this headline">¶</a></h3>
+<p>In fck, the forward slash <code class="docutils literal notranslate"><span class="pre">\</span></code> is used. The character after a <code class="docutils literal notranslate"><span class="pre">\</span></code> can ba anything and is added to the string regardless; however there are a few characters after a forward slash that have special meanings. These are listed below:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Character</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\n</span></code></p></td>
+<td><p>New line</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\t</span></code></p></td>
+<td><p>Tab</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="section" id="list-type">
+<span id="list-documentation"></span><h2><code class="docutils literal notranslate"><span class="pre">list</span></code> type<a class="headerlink" href="#list-type" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>list &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">list</span></code> type inherits from the <code class="docutils literal notranslate"><span class="pre">Value</span></code> class and contains a list of elements, which can be empty. The default value is an empty list(<code class="docutils literal notranslate"><span class="pre">[]</span></code>). When a value is assigned to a <code class="docutils literal notranslate"><span class="pre">list</span></code> type variable or cast as a <code class="docutils literal notranslate"><span class="pre">list</span></code> using the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword, some preprocessing may be required depending on the type of value being assigned. This preprocessing is outlined in the table below:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 59%"/>
+<col style="width: 26%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Value type</p></td>
+<td><p>Preprocessing</p></td>
+<td><p>Warning or error raised</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code>,
+<code class="docutils literal notranslate"><span class="pre">float</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Value is put into a list, and a warning is raised</p></td>
+<td><p><a class="reference internal" href="Error%20messages.html#warnings"><span class="std std-ref">W008</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>A <code class="docutils literal notranslate"><span class="pre">list</span></code> type can be multi-dimensional.</p>
+<div class="section" id="accessing-element-or-slice-of-a-list">
+<h3>Accessing element or slice of a list<a class="headerlink" href="#accessing-element-or-slice-of-a-list" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">list</span> <span class="n">to</span> <span class="n">access</span><span class="o">&gt;</span><span class="p">[</span><span class="o">&lt;</span><span class="nb">range</span><span class="o">&gt;</span><span class="p">(,</span><span class="o">&lt;</span><span class="nb">range</span><span class="o">&gt;</span><span class="p">)</span><span class="o">*</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">first</span> <span class="n">index</span><span class="o">&gt;..&lt;</span><span class="n">second</span> <span class="n">index</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">single</span> <span class="n">index</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>When accessing a list, you can either access a slice or single index using a slice range or element range respectively..</p>
+<p>When accessing a slice, one of the first or second index must be specified. The first value defaults to the start of the list, and the second value defaults to the end of the list. If either of the given indices aren’t <code class="docutils literal notranslate"><span class="pre">int</span></code> types, they are converted into <code class="docutils literal notranslate"><span class="pre">int</span></code> types <a class="footnote-reference brackets" href="#id5" id="id2">1</a>. If this is successful, the values are then compared against the length of the list. If the indices referenced are outside the length of the list, a warning is raised(<a class="reference internal" href="Error%20messages.html#warnings"><span class="std std-ref">W009</span></a>) and the value is altered to fit within the length of the list. After this has happened, the range is retrieved from the list. If the first index is further through the list than the second value, the returned slice is reversed. So a range of <code class="docutils literal notranslate"><span class="pre">5..1</span></code> would return a slice containing elements 5, 4, 3, and 2 in that order. The second index is the stopping index, and is not included in a slice.</p>
+<p>When accessing a single index, a single value is given, which is then converted to an int <a class="footnote-reference brackets" href="#id5" id="id3">1</a>, and clamped to the within the length of the list.</p>
+<p>To access a value or slice in a multi-dimensional list, multiple ranges can be referenced, separated with a comma. For a list reference with multiple ranges, only the last range can be a slice range, so the compound range <code class="docutils literal notranslate"><span class="pre">1..2,</span> <span class="pre">3</span></code> is not allowed for a list <a class="footnote-reference brackets" href="#id6" id="id4">2</a>, but <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2..3</span></code> is.</p>
+<p>Indices can also be negative. A negative index refers to the n:superscript:<cite>th</cite> last element. So the range <code class="docutils literal notranslate"><span class="pre">..-1</span></code> would return a slice containing the entire list except the last item. Negative indices can be used for either the first or second index in a slice range, or for an element range.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets">1</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>See <a class="reference internal" href="#int-type">int type</a> reference for more details on conversion into <code class="docutils literal notranslate"><span class="pre">int</span></code> types.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p>This is allowed for an <code class="docutils literal notranslate"><span class="pre">array</span></code> of type <code class="docutils literal notranslate"><span class="pre">list</span></code> however. This is not allowed for lists since a list can contain several different data types, some of which a slice based range cannot be applied to.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="null-type">
+<span id="id7"></span><h2><code class="docutils literal notranslate"><span class="pre">null</span></code> type<a class="headerlink" href="#null-type" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="built-in-values">
+<h2>Built-in values<a class="headerlink" href="#built-in-values" title="Permalink to this headline">¶</a></h2>
+<p>fck has a few built-in values which cannot be altered. These are given below:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 19%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Identifier</p></td>
+<td><p>Type</p></td>
+<td><p>Explanation</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Returned value when a comparison is true</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Returned value when a comparison is false</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">null</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">null</span></code></p></td>
+<td><p>Basic type that contains no value. <a class="reference internal" href="#null-type"><span class="std std-ref">Reference</span></a></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="Built-in%20methods.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Built-in methods</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, RosiePuddles
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            |
+            <a class="muted-link" href="_sources/Built-in types.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Built-in types</a><ul>
+<li><a class="reference internal" href="#int-type"><code class="docutils literal notranslate"><span class="pre">int</span></code> type</a></li>
+<li><a class="reference internal" href="#float-type"><code class="docutils literal notranslate"><span class="pre">float</span></code> type</a></li>
+<li><a class="reference internal" href="#str-type"><code class="docutils literal notranslate"><span class="pre">str</span></code> type</a><ul>
+<li><a class="reference internal" href="#escape-characters">Escape characters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#list-type"><code class="docutils literal notranslate"><span class="pre">list</span></code> type</a><ul>
+<li><a class="reference internal" href="#accessing-element-or-slice-of-a-list">Accessing element or slice of a list</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#null-type"><code class="docutils literal notranslate"><span class="pre">null</span></code> type</a></li>
+<li><a class="reference internal" href="#built-in-values">Built-in values</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+</html>
