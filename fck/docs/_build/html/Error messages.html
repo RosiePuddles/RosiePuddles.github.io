@@ -239,6 +239,63 @@ or error, wrapped to a given length&gt;
 </div>
 <div class="section" id="errors">
 <span id="id2"></span><h3>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">IllegalChar</span></code> (<code class="docutils literal notranslate"><span class="pre">E001</span></code>)</dt><dd><p>Returned during code lexing when a character is used that is not recognised by fck</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ExpectedChar</span></code> (<code class="docutils literal notranslate"><span class="pre">E002</span></code>)</dt><dd><p>Returned during code lexing when the lexer expects a character after the previous character</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ExpectedExpr</span></code> (<code class="docutils literal notranslate"><span class="pre">E003</span></code>)</dt><dd><p>Returned when an expression was expected and not found</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">InvalidSyntax</span></code> (<code class="docutils literal notranslate"><span class="pre">E004</span></code>)</dt><dd><p>Returned when syntax was expected and not found. Can also be returned if the parser parses a line and does not use all tokens given</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">IllegalOperation</span></code> (<code class="docutils literal notranslate"><span class="pre">E005</span></code>)</dt><dd><p>Returned when an operation is performed that includes a value that does not support the operation</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">IllegalValue</span></code> (<code class="docutils literal notranslate"><span class="pre">E006</span></code>)</dt><dd><p>Returned when</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">IllegalVariableAssignment</span></code> (<code class="docutils literal notranslate"><span class="pre">E007</span></code>)</dt><dd><p>Returned when</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TooArgumentError</span></code> (<code class="docutils literal notranslate"><span class="pre">E008</span></code>)</dt><dd><p>Returned when</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">AttributeTypeError</span></code> (<code class="docutils literal notranslate"><span class="pre">E009</span></code>)</dt><dd><p>Returned when</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">IllegalArgumentValue</span></code> (<code class="docutils literal notranslate"><span class="pre">E010</span></code>)</dt><dd><p>Returned when</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">UnknownAttributeError</span></code> (<code class="docutils literal notranslate"><span class="pre">E011</span></code>)</dt><dd><p>Returned when</p>
+</dd>
+</dl>
+</li>
+</ul>
 </div>
 </div>
 </div>

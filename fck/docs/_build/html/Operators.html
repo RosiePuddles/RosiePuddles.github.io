@@ -136,12 +136,12 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">:&gt;</span></code> is similar to the assignment operator <code class="docutils literal notranslate"><span class="pre">::</span></code>, but returns the assigned value</p></li>
 </ul>
 <p>Both operators can be used inline with other code. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span> <span class="p">::</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span> <span class="n">b</span> <span class="p">:</span><span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">print(int a :: 1)</span>
+<span class="x">print(int b :&gt; 3)</span>
 </pre></div>
 </div>
 <p>when run would return:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kc">None</span>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">None</span>
 <span class="mi">3</span>
 </pre></div>
 </div>
@@ -216,15 +216,15 @@ the result</p></td>
 <h2>Wrapped operators<a class="headerlink" href="#wrapped-operators" title="Permalink to this headline">¶</a></h2>
 <p>All of the numerical operators can be wrapped inside one of the two assignment operators (<code class="docutils literal notranslate"><span class="pre">::</span></code> and <code class="docutils literal notranslate"><span class="pre">:&gt;</span></code>) to perform an operation on a variable and reassign the variable.</p>
 <p>For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span> <span class="n">a</span> <span class="p">::</span> <span class="mi">12</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="p">:</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">3</span>
-<span class="go">15</span>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">&gt;&gt;&gt; int a :: 12</span>
+<span class="x">&gt;&gt;&gt; a :&gt; a + 3</span>
+<span class="mi">15</span>
 </pre></div>
 </div>
 <p>Can be simplified to:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span> <span class="n">a</span> <span class="p">::</span> <span class="mi">12</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="p">:</span><span class="o">+&gt;</span> <span class="mi">3</span>
-<span class="go">15</span>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">&gt;&gt;&gt; int a :: 12</span>
+<span class="x">&gt;&gt;&gt; a :+&gt; 3</span>
+<span class="mi">15</span>
 </pre></div>
 </div>
 <p>The given value is always considered as the second value, and so <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">:/:</span> <span class="pre">b</span></code> would assign <code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">/</span> <span class="pre">b</span></code>.</p>

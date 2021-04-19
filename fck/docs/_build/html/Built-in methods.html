@@ -131,24 +131,24 @@
 <p>This page details all the different type of built-in methods in fck. Several of these methods rely on condition evaluation to check if a given suite should be executed. The condition evaluation in fck is different to most other coding languages and is detailed <a class="reference internal" href="#here">here</a>.</p>
 <div class="section" id="while-loop">
 <h2>While loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="o">&lt;</span><span class="n">suite</span><span class="o">&gt;</span>
-<span class="p">}</span>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="x"> &lt;condition&gt; {</span>
+<span class="x">    &lt;suite&gt;</span>
+<span class="x">}</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop executes a given suite while the given condition is true. <code class="docutils literal notranslate"><span class="pre">while</span></code> loops can be named. See the naming methods section for how to <a class="reference internal" href="#name-methods">name methods</a>.</p>
 </div>
 <div class="section" id="iterate-loop">
 <h2>Iterate loop<a class="headerlink" href="#iterate-loop" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iterate</span> <span class="o">&lt;</span><span class="nb">range</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="o">&lt;</span><span class="n">suite</span><span class="o">&gt;</span>
-<span class="p">}</span>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="k">iterate</span><span class="x"> &lt;range&gt; {</span>
+<span class="x">    &lt;suite&gt;</span>
+<span class="x">}</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">iterate</span></code> loop executes a given suite a given number of times. As with <code class="docutils literal notranslate"><span class="pre">while</span></code> loops, <code class="docutils literal notranslate"><span class="pre">iterate</span></code> loops can be named. See the naming methods section for how to <a class="reference internal" href="#name-methods">name methods</a>.</p>
 <div class="section" id="range-based-iteration">
 <h3>Range based iteration<a class="headerlink" href="#range-based-iteration" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(&lt;first value&gt; to)? &lt;second value&gt; (step &lt;step value&gt;)?  (:: &lt;iterable variable&gt;)?
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">(&lt;first value&gt; to)? &lt;second value&gt; (step &lt;step value&gt;)?  (:: &lt;iterable variable&gt;)?</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">range</span></code> of an iterate loop is very flexible and has several optional parts for range based iteration.</p>
@@ -183,7 +183,7 @@ the first value, else -1</p></td>
 </div>
 <div class="section" id="list-array-or-dictionary-based-iteration">
 <h3>List, array, or dictionary based iteration<a class="headerlink" href="#list-array-or-dictionary-based-iteration" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;list, array, or dict&gt; (step &lt;step value&gt;)? (:: &lt;iterable variable&gt;)?
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;list, array, or dict&gt; (step &lt;step value&gt;)? (:: &lt;iterable variable&gt;)?</span>
 </pre></div>
 </div>
 <p>The range parameter of the <code class="docutils literal notranslate"><span class="pre">iterate</span></code> method can also be an <code class="docutils literal notranslate"><span class="pre">array</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, or <code class="docutils literal notranslate"><span class="pre">dict</span></code>, with the step value and iterable variable being used the same as for the range based</p>
@@ -191,15 +191,15 @@ the first value, else -1</p></td>
 </div>
 <div class="section" id="if-statement">
 <h2>If statement<a class="headerlink" href="#if-statement" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if &lt;condition&gt; {
-    &lt;suite&gt;
-}
-(elif &lt;condition&gt; {
-    &lt;suite&gt;
-})*
-(else {
-    &lt;suite&gt;
-})?
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="x"> &lt;condition&gt; {</span>
+<span class="x">    &lt;suite&gt;</span>
+<span class="x">}</span>
+<span class="x">(elif &lt;condition&gt; {</span>
+<span class="x">    &lt;suite&gt;</span>
+<span class="x">})*</span>
+<span class="x">(else {</span>
+<span class="x">    &lt;suite&gt;</span>
+<span class="x">})?</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement runs a given suite of code is the related condition is evaluated to <code class="docutils literal notranslate"><span class="pre">true</span></code>. If not, then the statement moves through the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements, if there are any, and evaluates the suite of the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement if its related condition evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>. Once all <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements have been checked, the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is executed if there is an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement.</p>
@@ -207,14 +207,14 @@ the first value, else -1</p></td>
 </div>
 <div class="section" id="case-statement">
 <h2>Case statement<a class="headerlink" href="#case-statement" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>case &lt;expression&gt; {
-   (option &lt;expression&gt; {
-      &lt;suite&gt;
-   })*
-   (default {
-      &lt;suite&gt;
-   })?
-}
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">case &lt;expression&gt; {</span>
+<span class="x">   (option &lt;expression&gt; {</span>
+<span class="x">      &lt;suite&gt;</span>
+<span class="x">   })*</span>
+<span class="x">   (default {</span>
+<span class="x">      &lt;suite&gt;</span>
+<span class="x">   })?</span>
+<span class="x">}</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">case</span></code> statement evaluates a given expression, and then iterates over all of the <code class="docutils literal notranslate"><span class="pre">option</span></code> statements, evaluating the related expression and checking if the <code class="docutils literal notranslate"><span class="pre">option</span></code> expression matches the <code class="docutils literal notranslate"><span class="pre">case</span></code> expression. If it does then the related suite is executed. Once all <code class="docutils literal notranslate"><span class="pre">option</span></code> statements have been checked against, the <code class="docutils literal notranslate"><span class="pre">default</span></code> statements suite is evaluated, if there is a <code class="docutils literal notranslate"><span class="pre">default</span></code> statement.</p>
@@ -222,7 +222,7 @@ the first value, else -1</p></td>
 </div>
 <div class="section" id="operator">
 <h2><code class="docutils literal notranslate"><span class="pre">?</span></code> operator<a class="headerlink" href="#operator" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;condition to evaluate&gt; ? &lt;expression to return if true&gt; : &lt;expression to return if false&gt;
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;condition to evaluate&gt; ? &lt;expression to return if true&gt; : &lt;expression to return if false&gt;</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">?</span></code> operator can be used as an in-line if else statement. At least one of the expressions is required, but not both of them <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. When only one is used the <code class="docutils literal notranslate"><span class="pre">:</span></code> must be left in or an error will be raised. When an expression is left empty, a <code class="docutils literal notranslate"><span class="pre">null</span></code> value is returned.</p>
@@ -235,10 +235,11 @@ the first value, else -1</p></td>
 </div>
 <div class="section" id="method-naming">
 <span id="name-methods"></span><h2>Method naming<a class="headerlink" href="#method-naming" title="Permalink to this headline">¶</a></h2>
-<p>In fck, methods can be named for use in conjunction with the <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> keywords. To name a method, the <code class="docutils literal notranslate"><span class="pre">@</span></code> character is used followed by the name, and then the method. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@loop</span> <span class="k">while</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="o">&lt;</span><span class="n">suite</span><span class="o">&gt;</span>
-<span class="p">}</span>
+<p>In fck, methods can be named for use in conjunction with the <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> keywords. To name a method, the <code class="docutils literal notranslate"><span class="pre">@</span></code> character is used followed by the name, and then the
+method. For example:</p>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">@loop while &lt;condition&gt; {</span>
+<span class="x">    &lt;suite&gt;</span>
+<span class="x">}</span>
 </pre></div>
 </div>
 <p>If multiple methods are given the same name, these names will be altered with the suffix of 1, 2, 3 etc. assuming that these names do not exist either, with the exception of the first name, which will be left unaltered. <span class="warning">This will raise a warning.</span></p>

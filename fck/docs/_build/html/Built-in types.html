@@ -131,7 +131,7 @@
 <p>This page details the different built in types within fck. For the different types of operators used by fck, please see the <a class="reference internal" href="Operators.html"><span class="doc">operators</span></a> page</p>
 <div class="section" id="int-type">
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">int</span></code> type<a class="headerlink" href="#int-type" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>int &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="x"> &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">int</span></code> variable type inherits from the <code class="docutils literal notranslate"><span class="pre">Number</span></code> class, and holds a single integer value. It has a default value of 0. When a value is assigned to an <code class="docutils literal notranslate"><span class="pre">int</span></code> type variable or cast as an <code class="docutils literal notranslate"><span class="pre">int</span></code> using the <code class="docutils literal notranslate"><span class="pre">at</span></code> keyword, the value sometimes has to be preprocessed to form an integer if it is not already. The table below details the different preprocessing that occurs for different value types:</p>
@@ -188,7 +188,7 @@ warning is raised.</p></td>
 </div>
 <div class="section" id="float-type">
 <h2><code class="docutils literal notranslate"><span class="pre">float</span></code> type<a class="headerlink" href="#float-type" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>float &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="x"> &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">float</span></code> variable type inherits from the <code class="docutils literal notranslate"><span class="pre">Number</span></code> class, and holds a single floating point value. It has a default value of 0.0. When a value is assigned to a <code class="docutils literal notranslate"><span class="pre">float</span></code> type variable or cast as a <code class="docutils literal notranslate"><span class="pre">float</span></code> using the <code class="docutils literal notranslate"><span class="pre">at</span></code> keyword, the value sometimes has to be preprocessed to form a floating point value if it is not already. The table below details the different preprocessing that occurs for different value types:</p>
@@ -245,7 +245,7 @@ warning is raised</p></td>
 </div>
 <div class="section" id="str-type">
 <h2><code class="docutils literal notranslate"><span class="pre">str</span></code> type<a class="headerlink" href="#str-type" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>str &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="x"> &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">str</span></code> type inherits from the <code class="docutils literal notranslate"><span class="pre">Value</span></code> class and contains a single string, which can be empty. The default value is an empty string(<code class="docutils literal notranslate"><span class="pre">''</span></code>). To create a string, the value has to be surrounded by a pair of either inverted commas(<code class="docutils literal notranslate"><span class="pre">'</span></code>) or quotation marks(<code class="docutils literal notranslate"><span class="pre">"</span></code>).</p>
@@ -273,7 +273,7 @@ warning is raised</p></td>
 </div>
 <div class="section" id="list-type">
 <span id="list-documentation"></span><h2><code class="docutils literal notranslate"><span class="pre">list</span></code> type<a class="headerlink" href="#list-type" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>list &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="x"> &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">list</span></code> type inherits from the <code class="docutils literal notranslate"><span class="pre">Value</span></code> class and contains a list of elements, which can be empty. The default value is an empty list(<code class="docutils literal notranslate"><span class="pre">[]</span></code>). When a value is assigned to a <code class="docutils literal notranslate"><span class="pre">list</span></code> type variable or cast as a <code class="docutils literal notranslate"><span class="pre">list</span></code> using the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword, some preprocessing may be required depending on the type of value being assigned. This preprocessing is outlined in the table below:</p>
@@ -303,10 +303,10 @@ warning is raised</p></td>
 <p>A <code class="docutils literal notranslate"><span class="pre">list</span></code> type can be multi-dimensional.</p>
 <div class="section" id="accessing-element-or-slice-of-a-list">
 <h3>Accessing element or slice of a list<a class="headerlink" href="#accessing-element-or-slice-of-a-list" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">list</span> <span class="n">to</span> <span class="n">access</span><span class="o">&gt;</span><span class="p">[</span><span class="o">&lt;</span><span class="nb">range</span><span class="o">&gt;</span><span class="p">(,</span><span class="o">&lt;</span><span class="nb">range</span><span class="o">&gt;</span><span class="p">)</span><span class="o">*</span><span class="p">]</span>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;list to access&gt;[&lt;range&gt;(,&lt;range&gt;)*]</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">first</span> <span class="n">index</span><span class="o">&gt;..&lt;</span><span class="n">second</span> <span class="n">index</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">single</span> <span class="n">index</span><span class="o">&gt;</span>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;first index&gt;..&lt;second index&gt; | &lt;single index&gt;</span>
 </pre></div>
 </div>
 <p>When accessing a list, you can either access a slice or single index using a slice range or element range respectively..</p>
