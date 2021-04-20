@@ -112,6 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Built-in%20methods.html">Built-in methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Operators.html">Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Error%20messages.html">Error messages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Config%20file.html">Config file</a></li>
 </ul>
 
 </div>
@@ -128,13 +129,40 @@
         </label>
         <div class="section" id="built-in-types">
 <h1>Built-in types<a class="headerlink" href="#built-in-types" title="Permalink to this headline">¶</a></h1>
-<p>This page details the different built in types within fck. For the different types of operators used by fck, please see the <a class="reference internal" href="Operators.html"><span class="doc">operators</span></a> page</p>
+<p>This page details the different built in types within fck. For the different types of operators used by fck, please see the <a class="reference internal" href="Operators.html"><span class="doc">operators</span></a> page.</p>
+<p>Each section for the different types follows a general structure:</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>General overview and variable creation</strong></div>
+<div class="line">Gives a general overview of the value type, how to define it, what it inherits from(included since several methods are inherited from different classes), and what it holds</div>
+</div>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>Casting value processing</strong></div>
+<div class="line">Please note that for all warnings stated in these tables, none of these are returned when casting the value using the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>Illegal operations</strong></div>
+<div class="line">Gives a list of the operators that cannot be used with the given type and details why. Also gives cases where normally allowed operators are illegal. This section may be omitted if it is not required for the given type</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>Other sections relating to the type</strong></div>
+<div class="line">Many types have specific sections pertaining to specific details about that type, such as escape characters for the <code class="docutils literal notranslate"><span class="pre">str</span></code> type</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
 <div class="section" id="int-type">
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">int</span></code> type<a class="headerlink" href="#int-type" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="x"> &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">int</span></code> variable type inherits from the <code class="docutils literal notranslate"><span class="pre">Number</span></code> class, and holds a single integer value. It has a default value of 0. When a value is assigned to an <code class="docutils literal notranslate"><span class="pre">int</span></code> type variable or cast as an <code class="docutils literal notranslate"><span class="pre">int</span></code> using the <code class="docutils literal notranslate"><span class="pre">at</span></code> keyword, the value sometimes has to be preprocessed to form an integer if it is not already. The table below details the different preprocessing that occurs for different value types:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">int</span></code> variable type inherits from the <code class="docutils literal notranslate"><span class="pre">Number</span></code> class, and holds a single integer value. It has a default value of 0.</p>
+<div class="section" id="casting-value-processing">
+<h3>Casting value processing<a class="headerlink" href="#casting-value-processing" title="Permalink to this headline">¶</a></h3>
 <div class="table-wrapper"><table class="docutils align-default">
 <colgroup>
 <col style="width: 15%"/>
@@ -143,7 +171,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Value type</p></td>
-<td><p>Preprocessing</p></td>
+<td><p>Processing</p></td>
 <td><p>Warning or error raised</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
@@ -186,12 +214,15 @@ warning is raised.</p></td>
 </tbody>
 </table></div>
 </div>
+</div>
 <div class="section" id="float-type">
 <h2><code class="docutils literal notranslate"><span class="pre">float</span></code> type<a class="headerlink" href="#float-type" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="x"> &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">float</span></code> variable type inherits from the <code class="docutils literal notranslate"><span class="pre">Number</span></code> class, and holds a single floating point value. It has a default value of 0.0. When a value is assigned to a <code class="docutils literal notranslate"><span class="pre">float</span></code> type variable or cast as a <code class="docutils literal notranslate"><span class="pre">float</span></code> using the <code class="docutils literal notranslate"><span class="pre">at</span></code> keyword, the value sometimes has to be preprocessed to form a floating point value if it is not already. The table below details the different preprocessing that occurs for different value types:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">float</span></code> variable type inherits from the <code class="docutils literal notranslate"><span class="pre">Number</span></code> class, and holds a single floating point value. It has a default value of 0.0.</p>
+<div class="section" id="id2">
+<h3>Casting value processing<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="table-wrapper"><table class="docutils align-default">
 <colgroup>
 <col style="width: 15%"/>
@@ -200,7 +231,7 @@ warning is raised.</p></td>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Value type</p></td>
-<td><p>Preprocessing</p></td>
+<td><p>Processing</p></td>
 <td><p>Warning or error raised</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
@@ -243,12 +274,51 @@ warning is raised</p></td>
 </tbody>
 </table></div>
 </div>
+</div>
 <div class="section" id="str-type">
 <h2><code class="docutils literal notranslate"><span class="pre">str</span></code> type<a class="headerlink" href="#str-type" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="x"> &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">str</span></code> type inherits from the <code class="docutils literal notranslate"><span class="pre">Value</span></code> class and contains a single string, which can be empty. The default value is an empty string(<code class="docutils literal notranslate"><span class="pre">''</span></code>). To create a string, the value has to be surrounded by a pair of either inverted commas(<code class="docutils literal notranslate"><span class="pre">'</span></code>) or quotation marks(<code class="docutils literal notranslate"><span class="pre">"</span></code>).</p>
+<div class="section" id="id3">
+<h3>Casting value processing<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 59%"/>
+<col style="width: 26%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Value type</p></td>
+<td><p>Processing</p></td>
+<td><p>Warning or error raised</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>If the value can be converted into a float with base 10,
+then value is converted and rounded</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>If the value cannot be converted into a base 10 float,
+then an error is raised</p></td>
+<td><p><a class="reference internal" href="Error%20messages.html#errors"><span class="std std-ref">E006</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p>Uses the same processing as for an <code class="docutils literal notranslate"><span class="pre">int</span></code>, but omits
+rounding the values</p></td>
+<td><p>See above</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></td>
+<td><p>Returns a list with the string as the only element</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
 <div class="section" id="escape-characters">
 <h3>Escape characters<a class="headerlink" href="#escape-characters" title="Permalink to this headline">¶</a></h3>
 <p>In fck, the forward slash <code class="docutils literal notranslate"><span class="pre">\</span></code> is used. The character after a <code class="docutils literal notranslate"><span class="pre">\</span></code> can ba anything and is added to the string regardless; however there are a few characters after a forward slash that have special meanings. These are listed below:</p>
@@ -285,7 +355,7 @@ warning is raised</p></td>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Value type</p></td>
-<td><p>Preprocessing</p></td>
+<td><p>Processing</p></td>
 <td><p>Warning or error raised</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code>,
@@ -310,22 +380,30 @@ warning is raised</p></td>
 </pre></div>
 </div>
 <p>When accessing a list, you can either access a slice or single index using a slice range or element range respectively..</p>
-<p>When accessing a slice, one of the first or second index must be specified. The first value defaults to the start of the list, and the second value defaults to the end of the list. If either of the given indices aren’t <code class="docutils literal notranslate"><span class="pre">int</span></code> types, they are converted into <code class="docutils literal notranslate"><span class="pre">int</span></code> types <a class="footnote-reference brackets" href="#id5" id="id2">1</a>. If this is successful, the values are then compared against the length of the list. If the indices referenced are outside the length of the list, a warning is raised(<a class="reference internal" href="Error%20messages.html#warnings"><span class="std std-ref">W009</span></a>) and the value is altered to fit within the length of the list. After this has happened, the range is retrieved from the list. If the first index is further through the list than the second value, the returned slice is reversed. So a range of <code class="docutils literal notranslate"><span class="pre">5..1</span></code> would return a slice containing elements 5, 4, 3, and 2 in that order. The second index is the stopping index, and is not included in a slice.</p>
-<p>When accessing a single index, a single value is given, which is then converted to an int <a class="footnote-reference brackets" href="#id5" id="id3">1</a>, and clamped to the within the length of the list.</p>
-<p>To access a value or slice in a multi-dimensional list, multiple ranges can be referenced, separated with a comma. For a list reference with multiple ranges, only the last range can be a slice range, so the compound range <code class="docutils literal notranslate"><span class="pre">1..2,</span> <span class="pre">3</span></code> is not allowed for a list <a class="footnote-reference brackets" href="#id6" id="id4">2</a>, but <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2..3</span></code> is.</p>
+<p>When accessing a slice, one of the first or second index must be specified. The first value defaults to the start of the list, and the second value defaults to the end of the list. If either of the given indices aren’t <code class="docutils literal notranslate"><span class="pre">int</span></code> types, they are converted into <code class="docutils literal notranslate"><span class="pre">int</span></code> types <a class="footnote-reference brackets" href="#id7" id="id4">1</a>. If this is successful, the values are then compared against the length of the list. If the indices referenced are outside the length of the list, a warning is raised(<a class="reference internal" href="Error%20messages.html#warnings"><span class="std std-ref">W009</span></a>) and the value is altered to fit within the length of the list. After this has happened, the range is retrieved from the list. If the first index is further through the list than the second value, the returned slice is reversed. So a range of <code class="docutils literal notranslate"><span class="pre">5..1</span></code> would return a slice containing elements 5, 4, 3, and 2 in that order. The second index is the stopping index, and is not included in a slice.</p>
+<p>When accessing a single index, a single value is given, which is then converted to an int <a class="footnote-reference brackets" href="#id7" id="id5">1</a>, and clamped to the within the length of the list.</p>
+<p>To access a value or slice in a multi-dimensional list, multiple ranges can be referenced, separated with a comma. For a list reference with multiple ranges, only the last range can be a slice range, so the compound range <code class="docutils literal notranslate"><span class="pre">1..2,</span> <span class="pre">3</span></code> is not allowed for a list <a class="footnote-reference brackets" href="#id8" id="id6">2</a>, but <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2..3</span></code> is.</p>
 <p>Indices can also be negative. A negative index refers to the n:superscript:<cite>th</cite> last element. So the range <code class="docutils literal notranslate"><span class="pre">..-1</span></code> would return a slice containing the entire list except the last item. Negative indices can be used for either the first or second index in a slice range, or for an element range.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id5"><span class="brackets">1</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>)</span></dt>
+<dt class="label" id="id7"><span class="brackets">1</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id5">2</a>)</span></dt>
 <dd><p>See <a class="reference internal" href="#int-type">int type</a> reference for more details on conversion into <code class="docutils literal notranslate"><span class="pre">int</span></code> types.</p>
 </dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id6">2</a></span></dt>
 <dd><p>This is allowed for an <code class="docutils literal notranslate"><span class="pre">array</span></code> of type <code class="docutils literal notranslate"><span class="pre">list</span></code> however. This is not allowed for lists since a list can contain several different data types, some of which a slice based range cannot be applied to.</p>
 </dd>
 </dl>
 </div>
+<div class="section" id="single-and-zero-element-recursion">
+<span id="list-recursion"></span><h3>Single and zero element recursion<a class="headerlink" href="#single-and-zero-element-recursion" title="Permalink to this headline">¶</a></h3>
+<p>In fck, lists have properties known as single and zero element recursion. Technically, a list has single element recursion if it recursively only contains one element, and zero element recursion if it recursively contains no elements. In practice, this means that a list can have a single nested list with one element in, giving the list single element recursion. For example the list <code class="docutils literal notranslate"><span class="pre">[1]</span></code> has single element recursion, as does <code class="docutils literal notranslate"><span class="pre">[[[['hello']]]]</span></code>, but <code class="docutils literal notranslate"><span class="pre">[[1],</span> <span class="pre">2]</span></code> does not, since there is more than one value contained within the parent list, and all nested lists. This is evaluated in the same way for zero element recursion, but the requirement is that no elements are contained within the parent list or any nested lists.</p>
+<p>Single element recursion is used when casting a list as another type. If a list with single element recursion is cast as a single value type(<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, or <code class="docutils literal notranslate"><span class="pre">bool</span></code>) the single element in the list is cast as the given type. For example <code class="docutils literal notranslate"><span class="pre">[[['1']]]</span> <span class="pre">as</span> <span class="pre">int</span></code> would return the same as <code class="docutils literal notranslate"><span class="pre">'1'</span> <span class="pre">as</span> <span class="pre">int</span></code>.</p>
+<p>Despite being stated as a single value type above, the <code class="docutils literal notranslate"><span class="pre">bool</span></code> type does not follow this method. When casting a <code class="docutils literal notranslate"><span class="pre">list</span></code> as a <code class="docutils literal notranslate"><span class="pre">bool</span></code>, the returned value is <code class="docutils literal notranslate"><span class="pre">true</span></code> in all cases except if the list has zero element recursion.</p>
+<p>If a list with zero element recursion is cast as a single value type, the default value is used.</p>
+<p>When casting a list to a single value type, a warning(<a class="reference internal" href="Error%20messages.html#warnings"><span class="std std-ref">W014</span></a>) is raised.</p>
+</div>
 </div>
 <div class="section" id="null-type">
-<span id="id7"></span><h2><code class="docutils literal notranslate"><span class="pre">null</span></code> type<a class="headerlink" href="#null-type" title="Permalink to this headline">¶</a></h2>
+<span id="id9"></span><h2><code class="docutils literal notranslate"><span class="pre">null</span></code> type<a class="headerlink" href="#null-type" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="built-in-values">
 <h2>Built-in values<a class="headerlink" href="#built-in-values" title="Permalink to this headline">¶</a></h2>
@@ -413,14 +491,22 @@ warning is raised</p></td>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Built-in types</a><ul>
-<li><a class="reference internal" href="#int-type"><code class="docutils literal notranslate"><span class="pre">int</span></code> type</a></li>
-<li><a class="reference internal" href="#float-type"><code class="docutils literal notranslate"><span class="pre">float</span></code> type</a></li>
+<li><a class="reference internal" href="#int-type"><code class="docutils literal notranslate"><span class="pre">int</span></code> type</a><ul>
+<li><a class="reference internal" href="#casting-value-processing">Casting value processing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#float-type"><code class="docutils literal notranslate"><span class="pre">float</span></code> type</a><ul>
+<li><a class="reference internal" href="#id2">Casting value processing</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#str-type"><code class="docutils literal notranslate"><span class="pre">str</span></code> type</a><ul>
+<li><a class="reference internal" href="#id3">Casting value processing</a></li>
 <li><a class="reference internal" href="#escape-characters">Escape characters</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#list-type"><code class="docutils literal notranslate"><span class="pre">list</span></code> type</a><ul>
 <li><a class="reference internal" href="#accessing-element-or-slice-of-a-list">Accessing element or slice of a list</a></li>
+<li><a class="reference internal" href="#single-and-zero-element-recursion">Single and zero element recursion</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#null-type"><code class="docutils literal notranslate"><span class="pre">null</span></code> type</a></li>

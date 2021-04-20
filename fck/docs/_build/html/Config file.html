@@ -2,9 +2,11 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="#" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Error messages" href="Error%20messages.html" />
 
-    <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/><title>Search - fck 0.1.0 documentation</title><link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
+    <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
+        <title>Config file - fck 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
     
@@ -100,17 +102,17 @@
   
   <span class="sidebar-brand-text">fck 0.1.0 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="#">
+</a><form class="sidebar-search-container" method="get" action="search.html">
   <input class="sidebar-search" placeholder=Search name="q">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Built-in%20types.html">Built-in types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Built-in%20methods.html">Built-in methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Operators.html">Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Error%20messages.html">Error messages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Config%20file.html">Config file</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Config file</a></li>
 </ul>
 
 </div>
@@ -125,23 +127,38 @@
         <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        
-<div id="fallback" class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
+        <div class="section" id="config-file">
+<h1>Config file<a class="headerlink" href="#config-file" title="Permalink to this headline">¶</a></h1>
+<p>fck has a config file(named <code class="docutils literal notranslate"><span class="pre">.fck</span></code> and placed in the users root directory), containing values that determine how fck looks. The general form for each line in the config file is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;=&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
 </div>
-<script>document.getElementById('fallback').hidden = true;</script>
-
-<div id="search-results"></div>
+<p>If this form is not followed for a line, the line is skipped. A comprehensive list of all keys for the config file are given below</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">wrapLength</span></code> (integer)</dt><dd><p>Maximum wrap length for the warning and error messages. Has a minimum value of 25 and no maximum value. Please don’t abuse that though. I’d prefer not to have to deal with some obscure error from someone having a wrap length of 1000.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
 
       </article>
       <footer>
         
         <div class="related-pages">
           
-          
+          <a class="prev-page" href="Error%20messages.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Error messages</div>
+                
+              </div>
+            </a>
         </div>
 
         <div class="related-information">
@@ -151,6 +168,11 @@
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            |
+            <a class="muted-link" href="_sources/Config file.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
         </div>
         
       </footer>
@@ -166,8 +188,5 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script><script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script>
-<script src="searchindex.js"></script></body>
+    <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
 </html>
