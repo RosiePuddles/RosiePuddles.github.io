@@ -402,8 +402,29 @@ rounding the values</p></td>
 <p>When casting a list to a single value type, a warning(<a class="reference internal" href="Error%20messages.html#warnings"><span class="std std-ref">W014</span></a>) is raised.</p>
 </div>
 </div>
+<div class="section" id="auto-type">
+<span id="id9"></span><h2><code class="docutils literal notranslate"><span class="pre">auto</span></code> type<a class="headerlink" href="#auto-type" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">auto &lt;identifier&gt; (::|:&gt;) &lt;value&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">auto</span></code> type, whilst not a type in itself, is a variable decleration keyword that does not require the user to know the type of value being assigned.</p>
+<p>The order of preference for the <code class="docutils literal notranslate"><span class="pre">auto</span></code> type is as follows for single values:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></li>
+</ol>
+<p>For multiple value types:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">array</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vector</span></code> only if curved bracket(<code class="docutils literal notranslate"><span class="pre">(</span></code>) delimeters are used and is one dimensional</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code></p></li>
+</ol>
+</div>
 <div class="section" id="null-type">
-<span id="id9"></span><h2><code class="docutils literal notranslate"><span class="pre">null</span></code> type<a class="headerlink" href="#null-type" title="Permalink to this headline">¶</a></h2>
+<span id="id10"></span><h2><code class="docutils literal notranslate"><span class="pre">null</span></code> type<a class="headerlink" href="#null-type" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="built-in-values">
 <h2>Built-in values<a class="headerlink" href="#built-in-values" title="Permalink to this headline">¶</a></h2>
@@ -509,6 +530,7 @@ rounding the values</p></td>
 <li><a class="reference internal" href="#single-and-zero-element-recursion">Single and zero element recursion</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#auto-type"><code class="docutils literal notranslate"><span class="pre">auto</span></code> type</a></li>
 <li><a class="reference internal" href="#null-type"><code class="docutils literal notranslate"><span class="pre">null</span></code> type</a></li>
 <li><a class="reference internal" href="#built-in-values">Built-in values</a></li>
 </ul>
