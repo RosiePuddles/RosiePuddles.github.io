@@ -19,8 +19,8 @@ if (document.getElementsByClassName('demo').length > 0) {
   24
   48
   96
-  >>> float or void add(a, b){
-  ...   if a==5{return}
+  >>> def add(a, b){
+  ...   a == 5 ? return :
   ...   return a + b
   ... }
   >>> add(5,3)
