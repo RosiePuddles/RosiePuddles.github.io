@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Built-in methods" href="Built-in%20methods.html" /><link rel="prev" title="Welcome to fck’s documentation!" href="index.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Built-in types - fck 0.1.0 documentation</title>
+        <title>Built-in types - fck 0.1.0-alpha documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -86,7 +86,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">fck 0.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">fck 0.1.0-alpha documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -100,7 +100,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">fck 0.1.0 documentation</span>
+  <span class="sidebar-brand-text">fck 0.1.0-alpha documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html">
   <input class="sidebar-search" placeholder=Search name="q">
@@ -111,7 +111,9 @@
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Built-in types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Built-in%20methods.html">Built-in methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Error%20messages.html">Error messages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Language%20specific%20syntax.html">Language specific syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Config%20file.html">Config file</a></li>
 </ul>
 
@@ -134,12 +136,12 @@
 <ul>
 <li><div class="line-block">
 <div class="line"><strong>General overview and variable creation</strong></div>
-<div class="line">Gives a general overview of the value type, how to define it, what it inherits from(included since several methods are inherited from different classes), and what it holds</div>
+<div class="line">Gives a general overview of the value type, how to define it, what it inherits from to show inherited methods, and what it holds</div>
 </div>
-<ul>
+</li>
 <li><div class="line-block">
 <div class="line"><strong>Casting value processing</strong></div>
-<div class="line">Please note that for all warnings stated in these tables, none of these are returned when casting the value using the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword</div>
+<div class="line">Details the process to cast any type as the current type. All warnings listed in these sections are only raised when the original type is not implicitly cast, such as passing into functions, and not when using the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword</div>
 </div>
 </li>
 <li><div class="line-block">
@@ -153,11 +155,9 @@
 </div>
 </li>
 </ul>
-</li>
-</ul>
 <div class="section" id="int-type">
 <span id="id1"></span><h2><code class="docutils literal notranslate"><span class="pre">int</span></code> type<a class="headerlink" href="#int-type" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="x"> &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?</span>
+<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="gp">&lt;identifier&gt;</span> ((<span class="o">::|:&gt;</span>) <span class="gp">&lt;value&gt;</span>)<span class="o">?</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">int</span></code> variable type inherits from the <code class="docutils literal notranslate"><span class="pre">Number</span></code> class, and holds a single integer value. It has a default value of 0.</p>
@@ -217,7 +217,7 @@ warning is raised.</p></td>
 </div>
 <div class="section" id="float-type">
 <h2><code class="docutils literal notranslate"><span class="pre">float</span></code> type<a class="headerlink" href="#float-type" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="x"> &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?</span>
+<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="gp">&lt;identifier&gt;</span> ((<span class="o">::|:&gt;</span>) <span class="gp">&lt;value&gt;</span>)<span class="o">?</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">float</span></code> variable type inherits from the <code class="docutils literal notranslate"><span class="pre">Number</span></code> class, and holds a single floating point value. It has a default value of 0.0.</p>
@@ -277,7 +277,7 @@ warning is raised</p></td>
 </div>
 <div class="section" id="str-type">
 <h2><code class="docutils literal notranslate"><span class="pre">str</span></code> type<a class="headerlink" href="#str-type" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="x"> &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?</span>
+<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="gp">&lt;identifier&gt;</span> ((<span class="o">::|:&gt;</span>) <span class="gp">&lt;value&gt;</span>)<span class="o">?</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">str</span></code> type inherits from the <code class="docutils literal notranslate"><span class="pre">Value</span></code> class and contains a single string, which can be empty. The default value is an empty string(<code class="docutils literal notranslate"><span class="pre">''</span></code>). To create a string, the value has to be surrounded by a pair of either inverted commas(<code class="docutils literal notranslate"><span class="pre">'</span></code>) or quotation marks(<code class="docutils literal notranslate"><span class="pre">"</span></code>).</p>
@@ -343,7 +343,7 @@ rounding the values</p></td>
 </div>
 <div class="section" id="list-type">
 <span id="list-documentation"></span><h2><code class="docutils literal notranslate"><span class="pre">list</span></code> type<a class="headerlink" href="#list-type" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="x"> &lt;identifier&gt; ((::|:&gt;) &lt;value&gt;)?</span>
+<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="gp">&lt;identifier&gt;</span> ((<span class="o">::|:&gt;</span>) <span class="gp">&lt;value&gt;</span>)<span class="o">?</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">list</span></code> type inherits from the <code class="docutils literal notranslate"><span class="pre">Value</span></code> class and contains a list of elements, which can be empty. The default value is an empty list(<code class="docutils literal notranslate"><span class="pre">[]</span></code>). When a value is assigned to a <code class="docutils literal notranslate"><span class="pre">list</span></code> type variable or cast as a <code class="docutils literal notranslate"><span class="pre">list</span></code> using the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword, some preprocessing may be required depending on the type of value being assigned. This preprocessing is outlined in the table below:</p>
@@ -373,10 +373,10 @@ rounding the values</p></td>
 <p>A <code class="docutils literal notranslate"><span class="pre">list</span></code> type can be multi-dimensional.</p>
 <div class="section" id="accessing-element-or-slice-of-a-list">
 <h3>Accessing element or slice of a list<a class="headerlink" href="#accessing-element-or-slice-of-a-list" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;list to access&gt;[&lt;range&gt;(,&lt;range&gt;)*]</span>
+<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="gp">&lt;list to access&gt;</span>[<span class="gp">&lt;range&gt;</span>(,<span class="gp">&lt;range&gt;</span>)*]
 </pre></div>
 </div>
-<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;first index&gt;..&lt;second index&gt; | &lt;single index&gt;</span>
+<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="gp">&lt;first index&gt;</span><span class="o">..</span><span class="gp">&lt;second index&gt;</span> <span class="o">|</span> <span class="gp">&lt;single index&gt;</span>
 </pre></div>
 </div>
 <p>When accessing a list, you can either access a slice or single index using a slice range or element range respectively..</p>
@@ -404,7 +404,7 @@ rounding the values</p></td>
 </div>
 <div class="section" id="auto-type">
 <span id="id9"></span><h2><code class="docutils literal notranslate"><span class="pre">auto</span></code> type<a class="headerlink" href="#auto-type" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">auto &lt;identifier&gt; (::|:&gt;) &lt;value&gt;</span>
+<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="nb">auto</span> <span class="gp">&lt;identifier&gt;</span> (<span class="o">::|:&gt;</span>) <span class="gp">&lt;value&gt;</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">auto</span></code> type, whilst not a type in itself, is a variable decleration keyword that does not require the user to know the type of value being assigned.</p>

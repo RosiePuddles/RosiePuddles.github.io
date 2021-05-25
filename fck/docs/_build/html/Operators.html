@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Error messages" href="Error%20messages.html" /><link rel="prev" title="Built-in methods" href="Built-in%20methods.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Functions" href="Functions.html" /><link rel="prev" title="Built-in methods" href="Built-in%20methods.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Operators - fck 0.1.0 documentation</title>
+        <title>Operators - fck 0.1.0-alpha documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -86,7 +86,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">fck 0.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">fck 0.1.0-alpha documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -100,7 +100,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">fck 0.1.0 documentation</span>
+  <span class="sidebar-brand-text">fck 0.1.0-alpha documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html">
   <input class="sidebar-search" placeholder=Search name="q">
@@ -111,7 +111,9 @@
 <li class="toctree-l1"><a class="reference internal" href="Built-in%20types.html">Built-in types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Built-in%20methods.html">Built-in methods</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Error%20messages.html">Error messages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Language%20specific%20syntax.html">Language specific syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Config%20file.html">Config file</a></li>
 </ul>
 
@@ -137,12 +139,12 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">:&gt;</span></code> is similar to the assignment operator <code class="docutils literal notranslate"><span class="pre">::</span></code>, but returns the assigned value</p></li>
 </ul>
 <p>Both operators can be used inline with other code. For example:</p>
-<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">print(int a :: 1)</span>
-<span class="x">print(int b :&gt; 3)</span>
+<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span>(<span class="nb">int</span> a <span class="o">::</span> <span class="mi">1</span>)
+<span class="nb">print</span>(<span class="nb">int</span> b <span class="o">:&gt;</span> <span class="mi">3</span>)
 </pre></div>
 </div>
 <p>when run would return:</p>
-<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="kc">null</span>
+<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="nb">null</span>
 <span class="mi">3</span>
 </pre></div>
 </div>
@@ -217,14 +219,14 @@ the result</p></td>
 <h2>Wrapped operators<a class="headerlink" href="#wrapped-operators" title="Permalink to this headline">¶</a></h2>
 <p>All of the numerical operators can be wrapped inside one of the two assignment operators (<code class="docutils literal notranslate"><span class="pre">::</span></code> and <code class="docutils literal notranslate"><span class="pre">:&gt;</span></code>) to perform an operation on a variable and reassign the variable.</p>
 <p>For example:</p>
-<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">&gt;&gt;&gt; int a :: 12</span>
-<span class="x">&gt;&gt;&gt; a :&gt; a + 3</span>
+<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="gs">&gt;&gt;&gt;</span> <span class="nb">int</span> a <span class="o">::</span> <span class="mi">12</span>
+<span class="gs">&gt;&gt;&gt;</span> a <span class="o">:&gt;</span> a + <span class="mi">3</span>
 <span class="mi">15</span>
 </pre></div>
 </div>
 <p>Can be simplified to:</p>
-<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="x">&gt;&gt;&gt; int a :: 12</span>
-<span class="x">&gt;&gt;&gt; a :+&gt; 3</span>
+<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="gs">&gt;&gt;&gt;</span> <span class="nb">int</span> a <span class="o">::</span> <span class="mi">12</span>
+<span class="gs">&gt;&gt;&gt;</span> a <span class="o">:+&gt;</span> <span class="mi">3</span>
 <span class="mi">15</span>
 </pre></div>
 </div>
@@ -236,12 +238,12 @@ the result</p></td>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="Error%20messages.html">
+          <a class="next-page" href="Functions.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Error messages</div>
+                <div class="title">Functions</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
