@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Config file" href="Config%20file.html" /><link rel="prev" title="Error messages" href="Error%20messages.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Error messages" href="Error%20messages.html" /><link rel="prev" title="Custom Functions" href="Custom%20Functions.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Language specific syntax - fck 0.1.0-alpha documentation</title>
+        <title>Built-in functions - fck 0.1.0-alpha documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -89,7 +89,7 @@
       <a href="index.html"><div class="brand">fck 0.1.0-alpha documentation</div></a>
     </div>
     <div class="header-right">
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -111,13 +111,13 @@
 <li class="toctree-l1"><a class="reference internal" href="Built-in%20types.html">Built-in types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Built-in%20methods.html">Built-in methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Operators.html">Operators</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Functions.html">Functions</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="Functions.html">Functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Custom%20Functions.html">Custom Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Built-in%20Functions.html">Built-in functions</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Built-in functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Error%20messages.html">Error messages</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Language specific syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Language%20specific%20syntax.html">Language specific syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Config%20file.html">Config file</a></li>
 </ul>
 
@@ -130,49 +130,76 @@
   <main class="main">
     <div class="content">
       <article role="main">
-        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="language-specific-syntax">
-<h1>Language specific syntax<a class="headerlink" href="#language-specific-syntax" title="Permalink to this headline">¶</a></h1>
-<p>fck supports language specific syntax. What this means is that fck is bundles with several files for syntax in different languages, with more being added with each version. If your language is missing, feel free to request it or help out by making one yourself for your language.
-A default language can be specified in the <code class="docutils literal notranslate"><span class="pre">.fck</span></code> config file and defaults to <code class="docutils literal notranslate"><span class="pre">/fck/en</span></code>, or alternatively specified at the start of the script using the following syntax:</p>
-<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="ch"># /fck/&lt;language code&gt;!</span>
+        <div class="section" id="built-in-functions">
+<h1>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="print-function">
+<h2><code class="docutils literal notranslate"><span class="pre">print</span></code> function<a class="headerlink" href="#print-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="k">def </span><span class="nf">print</span>(<span class="no">str value :: '') -&gt; null</span>{}
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">&lt;language</span> <span class="pre">code&gt;</span></code> can be any of the following (taken from ISO 639-1):</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">en</span></code> English</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fr</span></code> French</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">es</span></code> Spanish</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">de</span></code> German</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">it</span></code> Italian</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">no</span></code> Norwegian</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sv</span></code> Swedish</p></li>
-</ul>
+<p>Prints the given value to the console with a new line at the end. The printed string has string formatting.</p>
+</div>
+<div class="section" id="log-function">
+<h2><code class="docutils literal notranslate"><span class="pre">log</span></code> function<a class="headerlink" href="#log-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="k">def </span><span class="nf">log</span>(<span class="no">str value :: '') -&gt; null</span>{}
+</pre></div>
+</div>
+<p>Prints the given string to the console without a new line. The printed string does not have string formatting enabled. The <code class="docutils literal notranslate"><span class="pre">log</span></code> function can be disabled globally with the global option <code class="docutils literal notranslate"><span class="pre">`nolog</span></code>.</p>
+</div>
+<div class="section" id="type-function">
+<h2><code class="docutils literal notranslate"><span class="pre">type</span></code> function<a class="headerlink" href="#type-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="k">def </span><span class="nf">type</span>(<span class="no">auto value) -&gt; str</span>{}
+</pre></div>
+</div>
+<p>Returns the type of the given value as a string.</p>
+</div>
+<div class="section" id="input-function">
+<h2><code class="docutils literal notranslate"><span class="pre">input</span></code> function<a class="headerlink" href="#input-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="k">def </span><span class="nf">input</span>(<span class="no">str prompt :: '') -&gt; str</span>{}
+</pre></div>
+</div>
+<p>Gets a user input and returns it as a string.</p>
+</div>
+<div class="section" id="run-function">
+<h2><code class="docutils literal notranslate"><span class="pre">run</span></code> function<a class="headerlink" href="#run-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="k">def </span><span class="nf">run</span>(<span class="no">str fn) -&gt; null</span>{}
+</pre></div>
+</div>
+<p>Run a fck script from inside another fck script.</p>
+</div>
+<div class="section" id="quit-function">
+<h2><code class="docutils literal notranslate"><span class="pre">quit</span></code> function<a class="headerlink" href="#quit-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-fck notranslate"><div class="highlight"><pre><span></span><span class="k">def </span><span class="nf">quit</span>(<span class="no">int exit_code :: 0) -&gt; null</span>{}
+</pre></div>
+</div>
+<p>Exits the script entirely with a given exit code.</p>
+</div>
 </div>
 
       </article>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="Config%20file.html">
+          <a class="next-page" href="Error%20messages.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Config file</div>
+                <div class="title">Error messages</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="Error%20messages.html">
+          <a class="prev-page" href="Custom%20Functions.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Error messages</div>
+                <div class="title">Custom Functions</div>
                 
               </div>
             </a>
@@ -186,7 +213,7 @@ A default language can be specified in the <code class="docutils literal notrans
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="_sources/Language specific syntax.rst.txt"
+            <a class="muted-link" href="_sources/Built-in Functions.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -194,8 +221,32 @@ A default language can be specified in the <code class="docutils literal notrans
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Built-in functions</a><ul>
+<li><a class="reference internal" href="#print-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> function</a></li>
+<li><a class="reference internal" href="#log-function"><code class="docutils literal notranslate"><span class="pre">log</span></code> function</a></li>
+<li><a class="reference internal" href="#type-function"><code class="docutils literal notranslate"><span class="pre">type</span></code> function</a></li>
+<li><a class="reference internal" href="#input-function"><code class="docutils literal notranslate"><span class="pre">input</span></code> function</a></li>
+<li><a class="reference internal" href="#run-function"><code class="docutils literal notranslate"><span class="pre">run</span></code> function</a></li>
+<li><a class="reference internal" href="#quit-function"><code class="docutils literal notranslate"><span class="pre">quit</span></code> function</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

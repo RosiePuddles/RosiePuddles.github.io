@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Error messages" href="Error%20messages.html" /><link rel="prev" title="Operators" href="Operators.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Custom Functions" href="Custom%20Functions.html" /><link rel="prev" title="Operators" href="Operators.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
         <title>Functions - fck 0.1.0-alpha documentation</title>
@@ -89,7 +89,7 @@
       <a href="index.html"><div class="brand">fck 0.1.0-alpha documentation</div></a>
     </div>
     <div class="header-right">
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -111,7 +111,11 @@
 <li class="toctree-l1"><a class="reference internal" href="Built-in%20types.html">Built-in types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Built-in%20methods.html">Built-in methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Operators.html">Operators</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Functions</a></li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Custom%20Functions.html">Custom Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Built-in%20Functions.html">Built-in functions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Error%20messages.html">Error messages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Language%20specific%20syntax.html">Language specific syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Config%20file.html">Config file</a></li>
@@ -126,67 +130,16 @@
   <main class="main">
     <div class="content">
       <article role="main">
-        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         <div class="section" id="functions">
 <h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
-<p>This page details all the different methods associated with custom functions. in fck.</p>
-<div class="section" id="function-defenition">
-<span id="funcdef"></span><h2>Function defenition<a class="headerlink" href="#function-defenition" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span>def <span class="gp">&lt;function identifier&gt;?</span> (<span class="gp">&lt;function parameters&gt;*</span>) (<span class="ss">-&gt;</span> <span class="gp">&lt;return type&gt;</span>)<span class="o">?</span>{
-    <span class="gp">&lt;function suite&gt;</span>
-}
-</pre></div>
-</div>
-<p>To define a function, the keyword <code class="docutils literal notranslate"><span class="pre">def</span></code> is used. Functions do not have to have predefined return types, but can optionally be specified with an arrow followed by the return type.</p>
-</div>
-<div class="section" id="identifier">
-<h2>Identifier<a class="headerlink" href="#identifier" title="Permalink to this headline">¶</a></h2>
-<p>The function identifier can contain any mixture of upper and lower case letters, numbers, and underscores. The function identifier name must match the regex pattern <code class="docutils literal notranslate"><span class="pre">\w+</span></code> or <code class="docutils literal notranslate"><span class="pre">[A-Za-z0-9_]+</span></code>.</p>
-<p>Identifiers are optional however. When the function is not given a name, the function has the name <code class="docutils literal notranslate"><span class="pre">&lt;anonymous&gt;</span></code> and cannot be called.</p>
-</div>
-<div class="section" id="predefined-return-types">
-<h2>Predefined return types<a class="headerlink" href="#predefined-return-types" title="Permalink to this headline">¶</a></h2>
-<p>By default, functions have no predefined return type; however, one can be speified. This specification comes after the arguments and is a type or list of type after an arrow. For example, the following function takes in two floats, and returns an int:</p>
-<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="k">def </span><span class="nf">add</span>(<span class="no">float a, float b) -&gt; int{</span>
-<span class="no">  return (a + b)</span> <span class="ow">as</span> <span class="nb">int</span>
-}
-</pre></div>
-</div>
-<p>If a return type is specified, and then a value is returned that does not have a matching type, the vaue is cast as the defined return type if possible, and a warning is raised. This means that the example above can be condensed to the following:</p>
-<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="k">def </span><span class="nf">add</span>(<span class="no">float a, float b) -&gt; int</span>{
-  <span class="k">return</span> a + b
-}
-</pre></div>
-</div>
-<p>Please note however, if the returned value cannot be cast as the defined type, then an error is raised.</p>
-</div>
-<div class="section" id="arguments">
-<h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h2>
-<p>When a function is defined, the arguments are defined within brackets after the function identifier. Arguments have to be specified by type. Each argument must follow the pattern <code class="docutils literal notranslate"><span class="pre">&lt;type</span> <span class="pre">of</span> <span class="pre">variable&gt;</span> <span class="pre">&lt;variable</span> <span class="pre">identifier&gt;</span> <span class="pre">(::</span> <span class="pre">&lt;default</span> <span class="pre">value&gt;)?</span></code>. Arguments with a default variable can be included at any point in the list of arguments. For example, both of the following are valid function definitions:</p>
-<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="k">def </span><span class="nf">add</span>(<span class="no">int a, int b :: 1){&lt;suite&gt;}</span>
-<span class="no">def add(int a :: 1, int b)</span>{<span class="gp">&lt;suite&gt;</span>}
-</pre></div>
-</div>
-<div class="section" id="passing-in-arguments">
-<h3>Passing in arguments<a class="headerlink" href="#passing-in-arguments" title="Permalink to this headline">¶</a></h3>
-<p>When passing in arguments into a function, the number of arguments will dictate which arguments is filled or altered. To example this, the following example function will be used:</p>
-<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="k">def </span><span class="nf">func</span>(<span class="no">str a, int b :: 1, float c, list d, list e:: [[2, 4], [1, 9]])</span>{
-     <span class="gp">&lt;suite&gt;</span>
-}
-</pre></div>
-</div>
-<p>This function has a total of 5 arguments, 3 without defaults (compulsory), and 2 with defaults (optional). When calling this function, if three values are passed in without an argument identifier prefixing it, then these will be assigned to <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>, and <code class="docutils literal notranslate"><span class="pre">d</span></code>, with each value first being cast as the type of each argument. So the first argument would be cast as a <code class="docutils literal notranslate"><span class="pre">str</span></code> type and so on. If 4 values were given as arguments, then <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">d</span></code> would still be filed since they are compulsory, but <code class="docutils literal notranslate"><span class="pre">b</span></code> would be altered from its default value. Passing in 4 arguments would also mean that the values previously assigned to <code class="docutils literal notranslate"><span class="pre">c</span></code> and <code class="docutils literal notranslate"><span class="pre">d</span></code> would be different. The following example explains this:</p>
-<div class="highlight-fckREGEX notranslate"><div class="highlight"><pre><span></span><span class="c">## a  'hello world!'</span>
-<span class="c">## b  1</span>
-<span class="c">## c  3.14159</span>
-<span class="c">## d  [1, 2, 3]</span>
-<span class="c">## e  [[2, 4], [1, 9]]</span>
-func(<span class="s">'hello world!'</span>, <span class="mf">3.14159</span>, [<span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">3</span>])
-</pre></div>
-</div>
-</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Custom%20Functions.html">Custom Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Built-in%20Functions.html">Built-in functions</a></li>
+</ul>
 </div>
 </div>
 
@@ -194,12 +147,12 @@ func(<span class="s">'hello world!'</span>, <span class="mf">3.14159</span>, [<s
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="Error%20messages.html">
+          <a class="next-page" href="Custom%20Functions.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Error messages</div>
+                <div class="title">Custom Functions</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -232,33 +185,8 @@ func(<span class="s">'hello world!'</span>, <span class="mf">3.14159</span>, [<s
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Functions</a><ul>
-<li><a class="reference internal" href="#function-defenition">Function defenition</a></li>
-<li><a class="reference internal" href="#identifier">Identifier</a></li>
-<li><a class="reference internal" href="#predefined-return-types">Predefined return types</a></li>
-<li><a class="reference internal" href="#arguments">Arguments</a><ul>
-<li><a class="reference internal" href="#passing-in-arguments">Passing in arguments</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
